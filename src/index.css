@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-gold: #FFC800;
+    --color-navy: #0A192F;
+    --color-coral: #FF4B3E;
+    --color-cream: #F9F6F0;
+  }
+
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0A192F;
+    color: #0A192F;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Burst & Wave Motif Pattern */
+.bg-burst-pattern {
+  background-image: radial-gradient(#FFC800 1.2px, transparent 1.2px), radial-gradient(#FF4B3E 1.2px, #0A192F 1.2px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
+  opacity: 0.12;
+}
+
+.bg-cream-burst-pattern {
+  background-image: radial-gradient(#FFC800 1.2px, transparent 1.2px), radial-gradient(#0A192F 0.8px, #F9F6F0 0.8px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  opacity: 0.08;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A192F;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC800;
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 200, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 75, 62, 0.45);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+
