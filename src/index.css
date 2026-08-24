@@ -2,16 +2,17 @@
 
 @layer base {
   :root {
-    --color-gold: #FFC800;
+    --color-gold: #D97706;
+    --color-gold-bright: #F59E0B;
     --color-navy: #0A192F;
     --color-coral: #FF4B3E;
-    --color-cream: #F9F6F0;
+    --color-cream: #FAFAF8;
   }
 
   body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #0A192F;
-    color: #0A192F;
+    background-color: #FAFAF8;
+    color: #0F172A;
   }
 
   h1, h2, h3, h4, h5, h6, .font-display {
@@ -20,19 +21,18 @@
   }
 }
 
-/* Burst & Wave Motif Pattern */
+/* Burst & Wave Motif Pattern for Light Mode */
 .bg-burst-pattern {
-  background-image: radial-gradient(#FFC800 1.2px, transparent 1.2px), radial-gradient(#FF4B3E 1.2px, #0A192F 1.2px);
+  background-image: radial-gradient(#F59E0B 1px, transparent 1px), radial-gradient(#FF4B3E 1px, transparent 1px);
   background-size: 36px 36px;
   background-position: 0 0, 18px 18px;
-  opacity: 0.12;
+  opacity: 0.08;
 }
 
 .bg-cream-burst-pattern {
-  background-image: radial-gradient(#FFC800 1.2px, transparent 1.2px), radial-gradient(#0A192F 0.8px, #F9F6F0 0.8px);
-  background-size: 32px 32px;
-  background-position: 0 0, 16px 16px;
-  opacity: 0.08;
+  background-image: radial-gradient(#D97706 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.06;
 }
 
 /* Custom Scrollbar */
@@ -40,14 +40,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A192F;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e3a5f;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FFC800;
+  background: #F59E0B;
 }
 
 @keyframes floatGentle {
@@ -61,15 +61,16 @@
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(255, 200, 0, 0.25);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
   }
   50% {
-    box-shadow: 0 0 35px rgba(255, 75, 62, 0.45);
+    box-shadow: 0 0 30px rgba(255, 75, 62, 0.35);
   }
 }
 
 .animate-pulse-glow {
   animation: pulseGlow 2.5s infinite ease-in-out;
 }
+
 
 

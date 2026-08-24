@@ -56,7 +56,7 @@ export const ExperienceSection: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-[#0D203D] relative border-t border-[#1E3A5F] text-white">
+    <section id="experience" className="py-20 bg-white relative border-t border-slate-200 text-slate-900">
       {/* Pattern */}
       <div className="absolute inset-0 bg-burst-pattern opacity-10 pointer-events-none" />
 
@@ -64,14 +64,14 @@ export const ExperienceSection: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFC800]/15 border border-[#FFC800]/30 text-[#FFC800] text-xs font-black uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-black uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
             <span>The Sensory Experience</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
             The Popcorn King Experience
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg mt-4">
+          <p className="text-slate-600 text-base sm:text-lg mt-4">
             It is more than just a snack — it is the sound of popping kernels, the rich buttery aroma, and the unforgettable communal excitement we bring to your Accra gathering.
           </p>
         </div>
@@ -84,8 +84,8 @@ export const ExperienceSection: React.FC = () => {
               onClick={() => setActiveTab(idx)}
               className={`px-5 py-3 rounded-2xl font-black text-xs sm:text-sm whitespace-nowrap transition-all flex items-center gap-2 uppercase tracking-wider ${
                 activeTab === idx
-                  ? 'bg-[#FFC800] text-[#0A192F] shadow-lg shadow-[#FFC800]/20'
-                  : 'bg-[#0A192F] text-slate-300 hover:text-white border border-[#1E3A5F]'
+                  ? 'bg-[#FFC800] text-[#0A192F] shadow-md shadow-amber-500/20'
+                  : 'bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200'
               }`}
             >
               <span>{idx + 1}.</span>
@@ -100,21 +100,21 @@ export const ExperienceSection: React.FC = () => {
           return (
             <div
               key={step.id}
-              className="bg-[#0A192F] rounded-3xl border border-[#1E3A5F] p-6 sm:p-10 shadow-2xl animate-in fade-in duration-300"
+              className="bg-slate-50 rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-xl animate-in fade-in duration-300"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
                 {/* Visual Image Side */}
-                <div className="lg:col-span-6 relative rounded-2xl overflow-hidden aspect-[4/3] bg-[#0D203D] border border-[#1E3A5F]">
+                <div className="lg:col-span-6 relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-200 border border-slate-200 shadow-sm">
                   <img
                     src={step.image}
                     alt={step.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/80 via-transparent to-black/20" />
-                  <div className="absolute bottom-4 left-4 right-4 p-3 bg-[#0A192F]/90 backdrop-blur-md rounded-xl border border-[#1E3A5F] text-xs text-[#FFC800] font-bold flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#FFC800] shrink-0" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
+                  <div className="absolute bottom-4 left-4 right-4 p-3 bg-white/95 backdrop-blur-md rounded-xl border border-slate-200 text-xs text-amber-900 font-bold flex items-center gap-2 shadow-xs">
+                    <Sparkles className="w-4 h-4 text-amber-700 shrink-0" />
                     <span>{step.subtitle}</span>
                   </div>
                 </div>
@@ -125,17 +125,17 @@ export const ExperienceSection: React.FC = () => {
                     <span className="text-xs font-black text-[#FF4B3E] uppercase tracking-wider block mb-1">
                       Highlight 0{idx + 1}
                     </span>
-                    <h3 className="font-display text-2xl sm:text-4xl font-black text-white mb-4">
+                    <h3 className="font-display text-2xl sm:text-4xl font-black text-slate-900 mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+                    <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                       {step.description}
                     </p>
 
                     <div className="space-y-3">
                       {step.points.map((pt, i) => (
-                        <div key={i} className="flex items-start gap-3 text-sm text-slate-200">
-                          <div className="w-5 h-5 rounded-full bg-[#FFC800]/20 text-[#FFC800] flex items-center justify-center shrink-0 mt-0.5 text-xs font-black">
+                        <div key={i} className="flex items-start gap-3 text-sm text-slate-700">
+                          <div className="w-5 h-5 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-black">
                             ✓
                           </div>
                           <span>{pt}</span>
@@ -144,10 +144,10 @@ export const ExperienceSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t border-[#1E3A5F] flex flex-wrap items-center gap-4">
+                  <div className="pt-6 border-t border-slate-200 flex flex-wrap items-center gap-4">
                     <a
                       href="#catering"
-                      className="px-7 py-3.5 bg-[#FFC800] hover:bg-[#e6b400] text-[#0A192F] font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg"
+                      className="px-7 py-3.5 bg-[#FFC800] hover:bg-[#e6b400] text-[#0A192F] font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-md"
                     >
                       Book This Experience
                     </a>
@@ -155,9 +155,9 @@ export const ExperienceSection: React.FC = () => {
                       href="https://wa.me/233550999008?text=Hello%20Popcorn%20King,%20tell%20me%20more%20about%20your%20live%20cart%20experience!"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3.5 bg-[#0D203D] hover:bg-[#152e54] text-slate-200 hover:text-white border border-[#1E3A5F] rounded-xl text-xs font-bold transition-colors flex items-center gap-2"
+                      className="px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-800 border border-slate-200 rounded-xl text-xs font-bold transition-colors flex items-center gap-2 shadow-2xs"
                     >
-                      <MessageCircle className="w-4 h-4 fill-slate-300" />
+                      <MessageCircle className="w-4 h-4 fill-emerald-600 text-emerald-600" />
                       <span>Inquire on WhatsApp</span>
                     </a>
                   </div>

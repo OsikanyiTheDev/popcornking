@@ -47,24 +47,24 @@ export const BulkInquiryModal: React.FC<BulkInquiryModalProps> = ({ isOpen, onCl
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-[#0A192F] border border-[#1E3A5F] rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in duration-200 text-white">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+      <div className="bg-white border border-slate-200 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in duration-200 text-slate-900">
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full bg-[#0D203D] text-slate-400 hover:text-white"
+          className="absolute top-5 right-5 p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-11 h-11 rounded-xl bg-[#FFC800]/20 text-[#FFC800] border border-[#FFC800]/40 flex items-center justify-center text-xl">
+          <div className="w-11 h-11 rounded-xl bg-amber-100 text-amber-900 border border-amber-300 flex items-center justify-center text-xl">
             🍿
           </div>
           <div>
-            <h3 className="font-display text-2xl font-black text-white">
+            <h3 className="font-display text-2xl font-black text-slate-900">
               Bulk Order & Custom Flavours
             </h3>
-            <p className="text-xs text-slate-300">
+            <p className="text-xs text-slate-600">
               For church programs, school fairs, corporate PR, and custom event packaging.
             </p>
           </div>
@@ -73,36 +73,36 @@ export const BulkInquiryModal: React.FC<BulkInquiryModalProps> = ({ isOpen, onCl
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-bold text-slate-200 block mb-1">Your Name *</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Your Name *</label>
               <input
                 type="text"
                 required
                 placeholder="e.g. David Mensah"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+                className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500"
               />
             </div>
             <div>
-              <label className="text-xs font-bold text-slate-200 block mb-1">WhatsApp Phone *</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">WhatsApp Phone *</label>
               <input
                 type="tel"
                 required
                 placeholder="e.g. 055 099 9008"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+                className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-bold text-slate-200 block mb-1">Order Type</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Order Type</label>
               <select
                 value={orderType}
                 onChange={(e) => setOrderType(e.target.value)}
-                className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+                className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500 font-medium"
               >
                 <option value="Bulk Mega Sacks (50L+)">Bulk Mega Sacks (50L+)</option>
                 <option value="Pre-Packaged Snack Bags (50 - 5000 units)">Pre-Packaged Snack Bags</option>
@@ -112,52 +112,52 @@ export const BulkInquiryModal: React.FC<BulkInquiryModalProps> = ({ isOpen, onCl
             </div>
 
             <div>
-              <label className="text-xs font-bold text-slate-200 block mb-1">Estimated Quantity</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Estimated Quantity</label>
               <input
                 type="text"
                 placeholder="e.g. 150 bags or 5 Mega Sacks"
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
-                className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+                className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500"
               />
             </div>
           </div>
 
           <div>
-            <label className="text-xs font-bold text-slate-200 block mb-1">Custom Flavour or Event Colors (Optional)</label>
+            <label className="text-xs font-bold text-slate-700 block mb-1">Custom Flavour or Event Colors (Optional)</label>
             <input
               type="text"
               placeholder="e.g. Custom pink & gold Rainbow mix or extra ginger punch"
               value={customFlavorIdea}
               onChange={(e) => setCustomFlavorIdea(e.target.value)}
-              className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+              className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500"
             />
           </div>
 
           <div>
-            <label className="text-xs font-bold text-slate-200 block mb-1">Date Needed in Accra</label>
+            <label className="text-xs font-bold text-slate-700 block mb-1">Date Needed in Accra</label>
             <input
               type="date"
               value={targetDate}
               onChange={(e) => setTargetDate(e.target.value)}
-              className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+              className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500"
             />
           </div>
 
           <div>
-            <label className="text-xs font-bold text-slate-200 block mb-1">Additional Notes</label>
+            <label className="text-xs font-bold text-slate-700 block mb-1">Additional Notes</label>
             <textarea
               rows={2}
               placeholder="Describe your event, delivery address, or specific packaging requirements..."
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#FFC800]"
+              className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-amber-500"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-4 bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 shadow-xl shadow-[#FF4B3E]/30 transition-all"
+            className="w-full py-4 bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 shadow-md shadow-[#FF4B3E]/25 transition-all"
           >
             <MessageCircle className="w-4 h-4 fill-white" />
             <span>Send Bulk Inquiry to WhatsApp (+233 55 099 9008)</span>

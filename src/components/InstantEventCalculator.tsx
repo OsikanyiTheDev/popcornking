@@ -106,7 +106,7 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
   };
 
   return (
-    <section id="event-calculator" className="py-20 bg-[#0A192F] relative border-t border-[#1E3A5F] overflow-hidden text-white">
+    <section id="event-calculator" className="py-20 bg-[#FAFAFA] relative border-t border-slate-200 overflow-hidden text-slate-900">
       {/* Pattern background */}
       <div className="absolute inset-0 bg-burst-pattern opacity-10 pointer-events-none" />
 
@@ -114,14 +114,14 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF4B3E]/15 border border-[#FF4B3E]/30 text-[#FF4B3E] text-xs font-black uppercase tracking-wider mb-3">
-            <Calculator className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 border border-rose-300 text-rose-900 text-xs font-black uppercase tracking-wider mb-3">
+            <Calculator className="w-4 h-4 text-rose-700" />
             <span>Instant Event Quotation Engine</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
             Calculate Your Event Popcorn Package
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base mt-3">
+          <p className="text-slate-600 text-sm sm:text-base mt-3">
             Select your event type, guest count, and favourite flavours to generate an instant budget estimate and lock in dates with our Accra catering team.
           </p>
         </div>
@@ -129,17 +129,17 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
         <form onSubmit={handleSendQuoteWhatsApp} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left / Main Control Panel (8 cols) */}
-          <div className="lg:col-span-7 bg-[#0D203D] rounded-3xl p-6 sm:p-8 border border-[#1E3A5F] shadow-2xl space-y-6">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl space-y-6">
             
             {/* Step 1: Event Type */}
             <div>
-              <label className="text-xs font-extrabold text-[#FFC800] uppercase tracking-wider block mb-2">
+              <label className="text-xs font-extrabold text-amber-800 uppercase tracking-wider block mb-2">
                 1. Select Event Type
               </label>
               <select
                 value={eventType}
                 onChange={(e) => setEventType(e.target.value)}
-                className="w-full bg-[#0A192F] border border-[#1E3A5F] text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#FFC800] font-semibold"
+                className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 focus:bg-white font-semibold"
               >
                 {EVENT_TYPES.map((type) => (
                   <option key={type} value={type}>
@@ -152,11 +152,11 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
             {/* Step 2: Guest Count Slider */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="text-xs font-extrabold text-[#FFC800] uppercase tracking-wider flex items-center gap-1.5">
+                <label className="text-xs font-extrabold text-amber-800 uppercase tracking-wider flex items-center gap-1.5">
                   <Users className="w-4 h-4" />
                   <span>2. Guest Count</span>
                 </label>
-                <span className="font-display text-xl font-black text-white px-3 py-1 bg-[#0A192F] rounded-lg border border-[#1E3A5F]">
+                <span className="font-display text-xl font-black text-slate-900 px-3 py-1 bg-amber-50 rounded-lg border border-amber-200">
                   {guestCount} Guests
                 </span>
               </div>
@@ -167,9 +167,9 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
                 step="25"
                 value={guestCount}
                 onChange={(e) => setGuestCount(Number(e.target.value))}
-                className="w-full h-2.5 bg-[#0A192F] rounded-lg appearance-none cursor-pointer accent-[#FF4B3E]"
+                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#FF4B3E]"
               />
-              <div className="flex justify-between text-[11px] text-slate-400 mt-1 font-medium">
+              <div className="flex justify-between text-[11px] text-slate-500 mt-1 font-medium">
                 <span>25 Guests (Intimate)</span>
                 <span>250 (Mid-size)</span>
                 <span>500 (Large)</span>
@@ -179,7 +179,7 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
 
             {/* Step 3: Service Style Selection */}
             <div>
-              <label className="text-xs font-extrabold text-[#FFC800] uppercase tracking-wider block mb-2">
+              <label className="text-xs font-extrabold text-amber-800 uppercase tracking-wider block mb-2">
                 3. Service Setup & Presentation
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -209,16 +209,16 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
                     onClick={() => setServiceStyle(style.id as any)}
                     className={`p-3.5 rounded-2xl border text-left flex flex-col justify-between transition-all ${
                       serviceStyle === style.id
-                        ? 'bg-[#FF4B3E]/15 border-[#FF4B3E] shadow-md shadow-[#FF4B3E]/20 text-white'
-                        : 'bg-[#0A192F] border-[#1E3A5F] text-slate-300 hover:border-slate-500'
+                        ? 'bg-rose-50 border-[#FF4B3E] shadow-sm text-slate-900 ring-1 ring-[#FF4B3E]'
+                        : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
                     }`}
                   >
                     <div>
-                      <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#0A192F] border border-[#1E3A5F] text-[#FFC800] inline-block mb-1.5">
+                      <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white border border-slate-200 text-amber-900 inline-block mb-1.5 shadow-2xs">
                         {style.badge}
                       </span>
-                      <p className="font-display text-sm font-bold text-white">{style.title}</p>
-                      <p className="text-[11px] text-slate-300 mt-1 leading-snug">{style.desc}</p>
+                      <p className="font-display text-sm font-bold text-slate-900">{style.title}</p>
+                      <p className="text-[11px] text-slate-600 mt-1 leading-snug">{style.desc}</p>
                     </div>
                     {serviceStyle === style.id && (
                       <div className="mt-2 flex items-center gap-1 text-[11px] font-bold text-[#FF4B3E]">
@@ -233,10 +233,10 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
             {/* Step 4: Flavor Selection Matrix (The 6 Official Flavours) */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="text-xs font-extrabold text-[#FFC800] uppercase tracking-wider">
+                <label className="text-xs font-extrabold text-amber-800 uppercase tracking-wider">
                   4. Flavor Selection Matrix ({selectedFlavors.length} chosen)
                 </label>
-                <span className="text-[11px] text-slate-400">Click to select/unselect</span>
+                <span className="text-[11px] text-slate-500">Click to select/unselect</span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {OFFICIAL_FLAVOURS.map((flavor) => {
@@ -248,19 +248,19 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
                       onClick={() => toggleFlavor(flavor.id)}
                       className={`p-3 rounded-xl border text-left transition-all flex items-center justify-between ${
                         isSelected
-                          ? 'bg-[#FFC800]/15 border-[#FFC800] text-white shadow-sm'
-                          : 'bg-[#0A192F] border-[#1E3A5F] text-slate-400 hover:text-white hover:border-slate-600'
+                          ? 'bg-amber-50 border-amber-400 text-slate-900 shadow-2xs'
+                          : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300'
                       }`}
                     >
                       <div>
-                        <p className="text-xs font-bold text-white flex items-center gap-1.5">
+                        <p className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                           <span>🍿</span> {flavor.name}
                         </p>
-                        <p className="text-[10px] text-slate-300 line-clamp-1 mt-0.5">{flavor.desc}</p>
+                        <p className="text-[10px] text-slate-500 line-clamp-1 mt-0.5">{flavor.desc}</p>
                       </div>
                       <div
                         className={`w-4 h-4 rounded-full flex items-center justify-center text-[9px] shrink-0 font-black ${
-                          isSelected ? 'bg-[#FFC800] text-[#0A192F]' : 'bg-[#0A192F] border border-slate-700'
+                          isSelected ? 'bg-[#FFC800] text-[#0A192F]' : 'bg-white border border-slate-300'
                         }`}
                       >
                         {isSelected && '✓'}
@@ -272,10 +272,10 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
             </div>
 
             {/* Step 5: Custom Branding Toggle */}
-            <div className="p-4 rounded-2xl bg-[#0A192F] border border-[#1E3A5F] flex items-center justify-between">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
               <div>
-                <p className="text-xs font-bold text-white">Custom Logo & Event Theme Branding</p>
-                <p className="text-[11px] text-slate-400 mt-0.5">
+                <p className="text-xs font-bold text-slate-900">Custom Logo & Event Theme Branding</p>
+                <p className="text-[11px] text-slate-600 mt-0.5">
                   Print your wedding couple name, birthday theme, or corporate logo directly on all popcorn packaging.
                 </p>
               </div>
@@ -283,7 +283,7 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
                 type="button"
                 onClick={() => setCustomBranding(!customBranding)}
                 className={`w-12 h-6 rounded-full transition-colors relative flex items-center p-0.5 ${
-                  customBranding ? 'bg-[#FF4B3E]' : 'bg-slate-700'
+                  customBranding ? 'bg-[#FF4B3E]' : 'bg-slate-300'
                 }`}
               >
                 <div
@@ -297,88 +297,88 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
           </div>
 
           {/* Right / Instant Summary Card (5 cols) */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-[#0D203D] to-[#0A192F] rounded-3xl p-6 sm:p-8 border-2 border-[#FFC800]/40 shadow-2xl space-y-6 sticky top-28">
+          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-300 shadow-xl space-y-6 sticky top-28">
             
-            <div className="flex items-center justify-between pb-4 border-b border-[#1E3A5F]">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200">
               <div>
                 <span className="text-[10px] font-black uppercase tracking-wider text-[#FF4B3E]">Estimated Budget</span>
-                <h3 className="font-display text-3xl sm:text-4xl font-black text-white mt-0.5">
+                <h3 className="font-display text-3xl sm:text-4xl font-black text-slate-900 mt-0.5">
                   GH₵ {estimatedTotal.toLocaleString()}
                 </h3>
               </div>
               <div className="text-right">
-                <span className="text-[11px] text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                <span className="text-[11px] text-emerald-800 font-bold bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
                   Instant Estimate
                 </span>
-                <p className="text-[10px] text-slate-400 mt-1">~GH₵ {(estimatedTotal / guestCount).toFixed(1)} / guest</p>
+                <p className="text-[10px] text-slate-500 mt-1">~GH₵ {(estimatedTotal / guestCount).toFixed(1)} / guest</p>
               </div>
             </div>
 
             {/* Breakdown summary */}
-            <div className="space-y-2.5 text-xs text-slate-300">
-              <div className="flex justify-between py-1 border-b border-[#1E3A5F]/60">
+            <div className="space-y-2.5 text-xs text-slate-600">
+              <div className="flex justify-between py-1 border-b border-slate-100">
                 <span>Event Type:</span>
-                <strong className="text-white">{eventType}</strong>
+                <strong className="text-slate-900">{eventType}</strong>
               </div>
-              <div className="flex justify-between py-1 border-b border-[#1E3A5F]/60">
+              <div className="flex justify-between py-1 border-b border-slate-100">
                 <span>Guest Count:</span>
-                <strong className="text-white">{guestCount} Attendees</strong>
+                <strong className="text-slate-900">{guestCount} Attendees</strong>
               </div>
-              <div className="flex justify-between py-1 border-b border-[#1E3A5F]/60">
+              <div className="flex justify-between py-1 border-b border-slate-100">
                 <span>Flavours ({selectedFlavors.length}):</span>
-                <strong className="text-[#FFC800] text-right max-w-[200px] truncate">
+                <strong className="text-amber-800 text-right max-w-[200px] truncate">
                   {selectedFlavors.map((f) => OFFICIAL_FLAVOURS.find((fl) => fl.id === f)?.name).join(', ')}
                 </strong>
               </div>
-              <div className="flex justify-between py-1 border-b border-[#1E3A5F]/60">
+              <div className="flex justify-between py-1 border-b border-slate-100">
                 <span>Custom Logo Stickers:</span>
-                <strong className="text-white">{customBranding ? 'Included' : 'Standard'}</strong>
+                <strong className="text-slate-900">{customBranding ? 'Included' : 'Standard'}</strong>
               </div>
             </div>
 
             {/* Booking Details Input */}
             <div className="space-y-3 pt-2">
               <div>
-                <label className="text-[11px] font-bold text-slate-300 block mb-1">Your Name / Organization *</label>
+                <label className="text-[11px] font-bold text-slate-700 block mb-1">Your Name / Organization *</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Ama Darko / KPMG"
                   value={clientName}
                   onChange={(e) => setClientName(e.target.value)}
-                  className="w-full bg-[#0A192F] border border-[#1E3A5F] text-white rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-[#FFC800]"
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-amber-500 focus:bg-white"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-[11px] font-bold text-slate-300 block mb-1">Phone / WhatsApp *</label>
+                  <label className="text-[11px] font-bold text-slate-700 block mb-1">Phone / WhatsApp *</label>
                   <input
                     type="tel"
                     required
                     placeholder="055 099 9008"
                     value={clientPhone}
                     onChange={(e) => setClientPhone(e.target.value)}
-                    className="w-full bg-[#0A192F] border border-[#1E3A5F] text-white rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-[#FFC800]"
+                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-amber-500 focus:bg-white"
                   />
                 </div>
                 <div>
-                  <label className="text-[11px] font-bold text-slate-300 block mb-1">Event Date</label>
+                  <label className="text-[11px] font-bold text-slate-700 block mb-1">Event Date</label>
                   <input
                     type="date"
                     value={eventDate}
                     onChange={(e) => setEventDate(e.target.value)}
-                    className="w-full bg-[#0A192F] border border-[#1E3A5F] text-white rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-[#FFC800]"
+                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-amber-500 focus:bg-white"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-[11px] font-bold text-slate-300 block mb-1">Accra Location / Venue</label>
+                <label className="text-[11px] font-bold text-slate-700 block mb-1">Accra Location / Venue</label>
                 <select
                   value={locationArea}
                   onChange={(e) => setLocationArea(e.target.value)}
-                  className="w-full bg-[#0A192F] border border-[#1E3A5F] text-white rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-[#FFC800]"
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-amber-500 focus:bg-white"
                 >
                   {ACCRA_AREAS.map((area) => (
                     <option key={area} value={area}>
@@ -392,13 +392,13 @@ export const InstantEventCalculator: React.FC<InstantEventCalculatorProps> = ({ 
             {/* Instant WhatsApp Proposal Action */}
             <button
               type="submit"
-              className="w-full py-4 rounded-2xl bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-[#FF4B3E]/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full py-4 rounded-2xl bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-[#FF4B3E]/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <MessageCircle className="w-5 h-5 fill-white" />
               <span>Send Quote to WhatsApp (+233 55 099 9008)</span>
             </button>
 
-            <p className="text-[10px] text-center text-slate-400">
+            <p className="text-[10px] text-center text-slate-500">
               ⚡ Guaranteed rapid response within 15 minutes during Accra operating hours.
             </p>
 

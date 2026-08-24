@@ -86,19 +86,19 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#0A192F] border-l border-[#1E3A5F] shadow-2xl flex flex-col justify-between overflow-hidden text-white">
+        <div className="w-screen max-w-md bg-white border-l border-slate-200 shadow-2xl flex flex-col justify-between overflow-hidden text-slate-900">
           
           {/* Header */}
-          <div className="p-6 border-b border-[#1E3A5F] flex items-center justify-between bg-[#0D203D]">
+          <div className="p-6 border-b border-slate-200 flex items-center justify-between bg-slate-50">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-[#FFC800] flex items-center justify-center text-[#0A192F] font-black">
+              <div className="w-9 h-9 rounded-xl bg-amber-400 flex items-center justify-center text-slate-950 font-black">
                 <ShoppingBag className="w-5 h-5" />
               </div>
-              <h2 className="font-display text-xl font-black text-white">Your Popcorn Cart</h2>
+              <h2 className="font-display text-xl font-black text-slate-900">Your Popcorn Cart</h2>
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-[#1E3A5F] transition-colors"
+              className="p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -108,26 +108,26 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           <div className="p-6 overflow-y-auto flex-1 space-y-6">
             {orderPlacedSuccess ? (
               <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h3 className="text-2xl font-black text-white">Order Sent to WhatsApp!</h3>
-                <p className="text-sm text-slate-300">
+                <h3 className="text-2xl font-black text-slate-900">Order Sent to WhatsApp!</h3>
+                <p className="text-sm text-slate-600">
                   Our team in Accra (+233 55 099 9008) is preparing your fresh order details right now.
                 </p>
               </div>
             ) : cartItems.length === 0 ? (
               <div className="text-center py-16 space-y-4">
-                <div className="w-16 h-16 rounded-2xl bg-[#0D203D] border border-[#1E3A5F] flex items-center justify-center mx-auto text-3xl">
+                <div className="w-16 h-16 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto text-3xl">
                   🍿
                 </div>
-                <p className="text-slate-200 font-bold">Your cart is currently empty.</p>
-                <p className="text-xs text-slate-400">
+                <p className="text-slate-900 font-bold">Your cart is currently empty.</p>
+                <p className="text-xs text-slate-500">
                   Explore our 6 gourmet flavours and add your favorite bags or tubs!
                 </p>
                 <button
                   onClick={onClose}
-                  className="px-6 py-3 bg-[#FFC800] hover:bg-[#e6b400] text-[#0A192F] font-black rounded-xl text-xs uppercase tracking-wider transition-all"
+                  className="px-6 py-3 bg-amber-400 hover:bg-amber-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-sm"
                 >
                   Browse 6 Flavours
                 </button>
@@ -137,7 +137,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 {/* Cart Items List */}
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                    <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                       Selected Items ({cartItems.length})
                     </span>
                     <button
@@ -151,38 +151,38 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   {cartItems.map((item) => (
                     <div
                       key={item.id}
-                      className="p-3.5 rounded-2xl bg-[#0D203D] border border-[#1E3A5F] flex items-center gap-3.5"
+                      className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex items-center gap-3.5"
                     >
                       <img
                         src={item.productImage}
                         alt={item.productName}
                         referrerPolicy="no-referrer"
-                        className="w-14 h-14 rounded-xl object-cover shrink-0 bg-[#0A192F]"
+                        className="w-14 h-14 rounded-xl object-cover shrink-0 bg-slate-100"
                       />
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-bold text-white truncate">{item.productName}</h4>
-                        <p className="text-xs text-[#FFC800] font-bold">
+                        <h4 className="text-sm font-bold text-slate-900 truncate">{item.productName}</h4>
+                        <p className="text-xs text-amber-800 font-bold">
                           {item.selectedSize.name} ({item.selectedSize.weightLabel})
                         </p>
-                        <p className="text-xs text-slate-300 mt-0.5">
+                        <p className="text-xs text-slate-500 mt-0.5">
                           GH₵ {item.selectedSize.priceGHS} each
                         </p>
                       </div>
 
                       {/* Quantity Modifier */}
-                      <div className="flex items-center bg-[#0A192F] border border-[#1E3A5F] rounded-lg p-0.5">
+                      <div className="flex items-center bg-white border border-slate-200 rounded-lg p-0.5 shadow-2xs">
                         <button
                           onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
-                          className="w-6 h-6 flex items-center justify-center text-slate-300 hover:text-white rounded"
+                          className="w-6 h-6 flex items-center justify-center text-slate-600 hover:text-slate-950 rounded hover:bg-slate-100 font-bold"
                         >
                           -
                         </button>
-                        <span className="w-6 text-center text-xs font-black text-white">
+                        <span className="w-6 text-center text-xs font-black text-slate-900">
                           {item.quantity}
                         </span>
                         <button
                           onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                          className="w-6 h-6 flex items-center justify-center text-slate-300 hover:text-white rounded"
+                          className="w-6 h-6 flex items-center justify-center text-slate-600 hover:text-slate-950 rounded hover:bg-slate-100 font-bold"
                         >
                           +
                         </button>
@@ -200,39 +200,39 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </div>
 
                 {/* Delivery & Contact Information */}
-                <div className="pt-4 border-t border-[#1E3A5F] space-y-4">
-                  <h3 className="text-xs font-black uppercase tracking-wider text-[#FFC800] flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5" /> Delivery Information in Accra
+                <div className="pt-4 border-t border-slate-200 space-y-4">
+                  <h3 className="text-xs font-black uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-amber-700" /> Delivery Information in Accra
                   </h3>
 
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Your Name</label>
+                    <label className="text-xs font-bold text-slate-700 block mb-1">Your Name</label>
                     <input
                       type="text"
                       placeholder="e.g. Kwame Mensah"
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
-                      className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+                      className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">WhatsApp / Phone Number</label>
+                    <label className="text-xs font-bold text-slate-700 block mb-1">WhatsApp / Phone Number</label>
                     <input
                       type="tel"
                       placeholder="e.g. 055 099 9008"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+                      className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Accra Location / Neighborhood</label>
+                    <label className="text-xs font-bold text-slate-700 block mb-1">Accra Location / Neighborhood</label>
                     <select
                       value={deliveryArea}
                       onChange={(e) => setDeliveryArea(e.target.value)}
-                      className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+                      className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500 font-medium"
                     >
                       <option value="East Legon / Shiashie">East Legon / Shiashie</option>
                       <option value="Airport Residential / Airport City">Airport Residential / City</option>
@@ -249,24 +249,24 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Landmark / Street Address</label>
+                    <label className="text-xs font-bold text-slate-700 block mb-1">Landmark / Street Address</label>
                     <input
                       type="text"
                       placeholder="e.g. Near Shell filling station, House 12"
                       value={deliveryAddress}
                       onChange={(e) => setDeliveryAddress(e.target.value)}
-                      className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#FFC800]"
+                      className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-amber-500"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Special Order Notes (Optional)</label>
+                    <label className="text-xs font-bold text-slate-700 block mb-1">Special Order Notes (Optional)</label>
                     <textarea
                       rows={2}
                       placeholder="e.g. Please include extra caramel drizzle or separate bags"
                       value={orderNote}
                       onChange={(e) => setOrderNote(e.target.value)}
-                      className="w-full bg-[#0D203D] border border-[#1E3A5F] text-white rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#FFC800]"
+                      className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-amber-500"
                     />
                   </div>
                 </div>
@@ -276,33 +276,33 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
           {/* Footer & Checkout CTA */}
           {cartItems.length > 0 && !orderPlacedSuccess && (
-            <div className="p-6 border-t border-[#1E3A5F] bg-[#0D203D] space-y-4">
-              <div className="space-y-1.5 text-xs text-slate-300">
+            <div className="p-6 border-t border-slate-200 bg-slate-50 space-y-4">
+              <div className="space-y-1.5 text-xs text-slate-600">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="font-bold text-white">GH₵ {subtotal.toFixed(2)}</span>
+                  <span className="font-bold text-slate-900">GH₵ {subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Estimated Courier Delivery</span>
-                  <span className="font-bold text-white">
+                  <span className="font-bold text-slate-900">
                     {isPickup ? 'FREE (Pickup)' : `GH₵ ${deliveryFee.toFixed(2)}`}
                   </span>
                 </div>
-                <div className="flex justify-between text-base font-bold text-white pt-2 border-t border-[#1E3A5F]">
+                <div className="flex justify-between text-base font-bold text-slate-900 pt-2 border-t border-slate-200">
                   <span>Total Amount</span>
-                  <span className="text-[#FFC800] font-display text-xl">GH₵ {grandTotal.toFixed(2)}</span>
+                  <span className="text-amber-800 font-display text-xl">GH₵ {grandTotal.toFixed(2)}</span>
                 </div>
               </div>
 
               <button
                 onClick={handleWhatsAppCheckout}
-                className="w-full py-4 rounded-2xl bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-xl shadow-[#FF4B3E]/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full py-4 rounded-2xl bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-md shadow-[#FF4B3E]/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <MessageCircle className="w-5 h-5 fill-white" />
                 <span>Checkout via WhatsApp (+233 55 099 9008)</span>
               </button>
 
-              <p className="text-[11px] text-center text-slate-400">
+              <p className="text-[11px] text-center text-slate-500">
                 ⚡ Instant WhatsApp ordering • Fast Accra dispatch • MoMo / Cash accepted
               </p>
             </div>

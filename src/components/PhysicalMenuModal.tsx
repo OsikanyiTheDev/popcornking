@@ -83,21 +83,21 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
   return (
     <div
       id="physical-menu-modal"
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
+      className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
     >
-      <div className="relative w-full max-w-4xl bg-[#0A192F] border border-[#1E3A5F] rounded-3xl overflow-hidden shadow-2xl my-6 text-white flex flex-col max-h-[92vh]">
+      <div className="relative w-full max-w-4xl bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl my-6 text-slate-900 flex flex-col max-h-[92vh]">
         
         {/* Modal Top Header Bar */}
-        <div className="p-4 sm:p-6 bg-[#0D203D] border-b border-[#1E3A5F] flex items-center justify-between gap-4 flex-wrap">
+        <div className="p-4 sm:p-6 bg-slate-50 border-b border-slate-200 flex items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-2xl bg-[#FFC800]/15 border border-[#FFC800]/30 text-[#FFC800]">
+            <div className="p-2.5 rounded-2xl bg-amber-100 border border-amber-300 text-amber-900">
               <Layers className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+              <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
                 Popcorn King Official Menu & Flyers
               </h3>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-slate-600">
                 Official physical print menu & artisanal flavour showcase
               </p>
             </div>
@@ -105,14 +105,14 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
 
           <div className="flex items-center gap-2">
             {/* Tab switch */}
-            <div className="flex bg-[#0A192F] p-1 rounded-xl border border-[#1E3A5F]">
+            <div className="flex bg-slate-100 p-1 rounded-xl border border-slate-200">
               <button
                 id="tab-physical-menu"
                 onClick={() => setActiveTab('menu')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   activeTab === 'menu'
-                    ? 'bg-[#FFC800] text-[#0A192F] shadow-sm'
-                    : 'text-slate-300 hover:text-white'
+                    ? 'bg-amber-400 text-slate-950 shadow-xs'
+                    : 'text-slate-600 hover:text-slate-950'
                 }`}
               >
                 📄 Printed Menu
@@ -122,8 +122,8 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
                 onClick={() => setActiveTab('flyers')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   activeTab === 'flyers'
-                    ? 'bg-[#FFC800] text-[#0A192F] shadow-sm'
-                    : 'text-slate-300 hover:text-white'
+                    ? 'bg-amber-400 text-slate-950 shadow-xs'
+                    : 'text-slate-600 hover:text-slate-950'
                 }`}
               >
                 🎨 Flavour Flyers
@@ -133,7 +133,7 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
             <button
               id="btn-print-menu"
               onClick={handlePrint}
-              className="px-3.5 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 text-xs font-bold flex items-center gap-1.5 transition-all"
+              className="px-3.5 py-1.5 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-700 hover:bg-emerald-100 text-xs font-bold flex items-center gap-1.5 transition-all"
               title="Print Physical Menu"
             >
               <Printer className="w-3.5 h-3.5" />
@@ -143,7 +143,7 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
             <button
               id="btn-close-physical-menu-modal"
               onClick={onClose}
-              className="p-2 rounded-xl bg-[#0A192F] border border-[#1E3A5F] hover:bg-[#1E3A5F] text-slate-300 hover:text-white transition-colors"
+              className="p-2 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -151,33 +151,33 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-8 bg-[#071324] scrollbar-thin">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-8 bg-slate-100/70 scrollbar-thin">
           {activeTab === 'menu' ? (
             /* =========================================================================
                PRINTABLE PHYSICAL MENU DESIGN (MATCHING THE OFFICIAL POPCORN KING FLYER)
                ========================================================================= */
             <div
               id="printable-menu-sheet"
-              className="max-w-2xl mx-auto bg-gradient-to-b from-[#0A192F] via-[#0D203D] to-[#0A192F] border-2 border-[#FFC800]/40 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden"
+              className="max-w-2xl mx-auto bg-white border-2 border-amber-400/50 rounded-3xl p-6 sm:p-10 shadow-lg relative overflow-hidden text-slate-900"
             >
               {/* Gold Top Accent Line */}
-              <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-[#FFC800] via-[#FBBF24] to-[#FFC800]" />
+              <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500" />
               
               {/* Watermark / BG decoration */}
-              <div className="absolute inset-0 bg-[radial-gradient(#FFC800_1px,transparent_1px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
+              <div className="absolute inset-0 bg-[radial-gradient(#F59E0B_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
 
               {/* Menu Header */}
-              <div className="text-center relative z-10 mb-8 border-b border-[#1E3A5F] pb-6">
+              <div className="text-center relative z-10 mb-8 border-b border-slate-200 pb-6">
                 <div className="flex justify-center mb-3">
                   <PopcornKingLogo className="scale-110" />
                 </div>
-                <h1 className="font-display text-2xl sm:text-3xl font-black text-[#FFC800] tracking-wider uppercase">
+                <h1 className="font-display text-2xl sm:text-3xl font-black text-amber-800 tracking-wider uppercase">
                   POPCORN KING MENU
                 </h1>
-                <p className="text-xs sm:text-sm text-slate-300 font-medium tracking-wide mt-1">
+                <p className="text-xs sm:text-sm text-slate-600 font-medium tracking-wide mt-1">
                   Ghana&apos;s Royal Gourmet Popcorn & Live Event Catering
                 </p>
-                <div className="inline-block mt-3 px-3 py-1 rounded-full bg-[#FFC800]/10 border border-[#FFC800]/30 text-[#FFC800] text-xs font-bold">
+                <div className="inline-block mt-3 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold">
                   ✨ Freshly Popped Daily • Accra, Ghana
                 </div>
               </div>
@@ -187,9 +187,9 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
 
                 {/* 1. SIGNATURE POPCORN */}
                 <div>
-                  <div className="flex items-center gap-2 border-b border-[#FFC800]/30 pb-2 mb-3">
+                  <div className="flex items-center gap-2 border-b border-amber-300 pb-2 mb-3">
                     <span className="text-lg">🍿</span>
-                    <h2 className="font-display text-base sm:text-lg font-black text-[#FFC800] tracking-wider uppercase">
+                    <h2 className="font-display text-base sm:text-lg font-black text-amber-800 tracking-wider uppercase">
                       SIGNATURE POPCORN
                     </h2>
                   </div>
@@ -201,12 +201,12 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
                       { name: 'Milkyway', desc: 'Creamy chocolate drizzled with sweet milk notes', price: 'GH₵ 10' },
                       { name: 'Vibrant Rainbow', desc: 'Fun, colorful candied mix packed with flavor', price: 'GH₵ 10' },
                     ].map((item, idx) => (
-                      <div key={idx} className="flex justify-between items-start gap-4 p-2 rounded-xl hover:bg-white/5 transition-colors">
+                      <div key={idx} className="flex justify-between items-start gap-4 p-2 rounded-xl hover:bg-slate-50 transition-colors">
                         <div>
-                          <h4 className="font-bold text-white text-sm sm:text-base">{item.name}</h4>
-                          <p className="text-xs text-slate-300 italic">{item.desc}</p>
+                          <h4 className="font-bold text-slate-900 text-sm sm:text-base">{item.name}</h4>
+                          <p className="text-xs text-slate-500 italic">{item.desc}</p>
                         </div>
-                        <span className="font-display font-black text-sm sm:text-base text-[#FFC800] whitespace-nowrap bg-[#FFC800]/10 px-2.5 py-1 rounded-lg border border-[#FFC800]/20">
+                        <span className="font-display font-black text-sm sm:text-base text-amber-800 whitespace-nowrap bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">
                           {item.price}
                         </span>
                       </div>
@@ -214,38 +214,11 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
                   </div>
                 </div>
 
-                {/* 2. POPCORN PACKAGING */}
+                {/* 2. REFRESHMENTS */}
                 <div>
-                  <div className="flex items-center gap-2 border-b border-[#FFC800]/30 pb-2 mb-3">
-                    <span className="text-lg">📦</span>
-                    <h2 className="font-display text-base sm:text-lg font-black text-[#FFC800] tracking-wider uppercase">
-                      POPCORN PACKAGING
-                    </h2>
-                  </div>
-                  <div className="space-y-3">
-                    {[
-                      { name: 'Regular Round Cup', desc: 'Perfect individual single-serve size', price: 'GH₵ 10' },
-                      { name: 'Large Party Bucket', desc: 'Shareable tub for groups & movie nights', price: 'GH₵ 25' },
-                      { name: 'Sealed Event Bag', desc: 'Compact, neat snack pouch for catering & bulk orders', price: 'GH₵ 15' },
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex justify-between items-start gap-4 p-2 rounded-xl hover:bg-white/5 transition-colors">
-                        <div>
-                          <h4 className="font-bold text-white text-sm sm:text-base">{item.name}</h4>
-                          <p className="text-xs text-slate-300 italic">{item.desc}</p>
-                        </div>
-                        <span className="font-display font-black text-sm sm:text-base text-[#FFC800] whitespace-nowrap bg-[#FFC800]/10 px-2.5 py-1 rounded-lg border border-[#FFC800]/20">
-                          {item.price}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 3. REFRESHMENTS */}
-                <div>
-                  <div className="flex items-center gap-2 border-b border-[#FFC800]/30 pb-2 mb-3">
+                  <div className="flex items-center gap-2 border-b border-amber-300 pb-2 mb-3">
                     <span className="text-lg">🥤</span>
-                    <h2 className="font-display text-base sm:text-lg font-black text-[#FFC800] tracking-wider uppercase">
+                    <h2 className="font-display text-base sm:text-lg font-black text-amber-800 tracking-wider uppercase">
                       REFRESHMENTS
                     </h2>
                   </div>
@@ -254,12 +227,12 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
                       { name: 'Chilled Soft Drinks', desc: 'Coke, Fanta, Sprite (500ml)', price: 'GH₵ 10' },
                       { name: 'Signature Milkshakes', desc: 'Rich & creamy handcrafted shakes', price: 'GH₵ 25' },
                     ].map((item, idx) => (
-                      <div key={idx} className="flex justify-between items-start gap-4 p-2 rounded-xl hover:bg-white/5 transition-colors">
+                      <div key={idx} className="flex justify-between items-start gap-4 p-2 rounded-xl hover:bg-slate-50 transition-colors">
                         <div>
-                          <h4 className="font-bold text-white text-sm sm:text-base">{item.name}</h4>
-                          <p className="text-xs text-slate-300 italic">{item.desc}</p>
+                          <h4 className="font-bold text-slate-900 text-sm sm:text-base">{item.name}</h4>
+                          <p className="text-xs text-slate-500 italic">{item.desc}</p>
                         </div>
-                        <span className="font-display font-black text-sm sm:text-base text-[#FFC800] whitespace-nowrap bg-[#FFC800]/10 px-2.5 py-1 rounded-lg border border-[#FFC800]/20">
+                        <span className="font-display font-black text-sm sm:text-base text-amber-800 whitespace-nowrap bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">
                           {item.price}
                         </span>
                       </div>
@@ -269,9 +242,9 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
 
                 {/* 4. EVENT PACKAGES */}
                 <div>
-                  <div className="flex items-center gap-2 border-b border-[#FFC800]/30 pb-2 mb-3">
+                  <div className="flex items-center gap-2 border-b border-amber-300 pb-2 mb-3">
                     <span className="text-lg">🎪</span>
-                    <h2 className="font-display text-base sm:text-lg font-black text-[#FFC800] tracking-wider uppercase">
+                    <h2 className="font-display text-base sm:text-lg font-black text-amber-800 tracking-wider uppercase">
                       EVENT PACKAGES
                     </h2>
                   </div>
@@ -280,12 +253,12 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
                       { name: 'Live Vending Station', desc: 'Vintage popping cart + uniformed chef + hot unlimited batches for 3 hrs', price: '*Quote on Request' },
                       { name: 'Bulk Party Boxes', desc: 'Pre-packaged branded snack bags ready for birthdays, weddings & school fairs', price: '*Quote on Request' },
                     ].map((item, idx) => (
-                      <div key={idx} className="flex justify-between items-start gap-4 p-2 rounded-xl hover:bg-white/5 transition-colors">
+                      <div key={idx} className="flex justify-between items-start gap-4 p-2 rounded-xl hover:bg-slate-50 transition-colors">
                         <div>
-                          <h4 className="font-bold text-white text-sm sm:text-base">{item.name}</h4>
-                          <p className="text-xs text-slate-300 italic">{item.desc}</p>
+                          <h4 className="font-bold text-slate-900 text-sm sm:text-base">{item.name}</h4>
+                          <p className="text-xs text-slate-500 italic">{item.desc}</p>
                         </div>
-                        <span className="font-display font-bold text-xs sm:text-sm text-emerald-400 whitespace-nowrap bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20">
+                        <span className="font-display font-bold text-xs sm:text-sm text-emerald-700 whitespace-nowrap bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-300">
                           {item.price}
                         </span>
                       </div>
@@ -296,27 +269,27 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
               </div>
 
               {/* Menu Footer Contact Band */}
-              <div className="mt-8 pt-6 border-t border-[#1E3A5F] text-center relative z-10 bg-[#0A192F]/80 rounded-2xl p-4 border border-[#FFC800]/20">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs sm:text-sm font-semibold text-slate-300">
+              <div className="mt-8 pt-6 border-t border-slate-200 text-center relative z-10 bg-amber-50/60 rounded-2xl p-4 border border-amber-200">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs sm:text-sm font-semibold text-slate-700">
                   <a
                     href="tel:+233550999008"
-                    className="flex items-center gap-1.5 text-[#FFC800] hover:underline"
+                    className="flex items-center gap-1.5 text-amber-800 hover:underline font-bold"
                   >
                     <Phone className="w-4 h-4" />
                     <span>+233 550 999 008</span>
                   </a>
-                  <span className="hidden sm:inline text-slate-600">•</span>
+                  <span className="hidden sm:inline text-slate-400">•</span>
                   <a
                     href="https://instagram.com/popcornkingghana"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-1.5 text-[#FFC800] hover:underline"
+                    className="flex items-center gap-1.5 text-amber-800 hover:underline font-bold"
                   >
                     <Instagram className="w-4 h-4" />
                     <span>@popcornkingghana</span>
                   </a>
                 </div>
-                <p className="text-[11px] text-slate-300 mt-2">
+                <p className="text-[11px] text-slate-600 mt-2">
                   Contact us for weddings, corporate functions, birthdays & customized bulk orders across Accra!
                 </p>
               </div>
@@ -336,8 +309,8 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
                     onClick={() => setSelectedFlyer(flyer.id)}
                     className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all ${
                       selectedFlyer === flyer.id
-                        ? 'bg-[#FFC800] text-[#0A192F] shadow-lg shadow-[#FFC800]/20 scale-105'
-                        : 'bg-[#0D203D] text-slate-300 hover:text-white border border-[#1E3A5F]'
+                        ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20 scale-105'
+                        : 'bg-white text-slate-700 hover:text-slate-950 border border-slate-200'
                     }`}
                   >
                     {flyer.name}
@@ -349,20 +322,20 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
               {(() => {
                 const current = flyers.find((f) => f.id === selectedFlyer) || flyers[0];
                 return (
-                  <div className="max-w-xl mx-auto bg-[#0A192F] border-2 border-[#FFC800]/40 rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-8">
+                  <div className="max-w-xl mx-auto bg-white border-2 border-amber-300 rounded-3xl overflow-hidden shadow-lg p-6 sm:p-8 text-slate-900">
                     
                     <div className="flex items-center justify-between mb-4">
-                      <span className="px-3 py-1 rounded-full bg-[#FFC800]/15 text-[#FFC800] font-bold text-xs border border-[#FFC800]/30">
+                      <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-bold text-xs border border-amber-300">
                         {current.badge}
                       </span>
-                      <span className="font-display text-2xl font-black text-[#FFC800]">
+                      <span className="font-display text-2xl font-black text-amber-800">
                         {current.price}
                       </span>
                     </div>
 
                     {/* Official Flyer Visual */}
                     {current.image && (
-                      <div className="mb-6 rounded-2xl overflow-hidden border border-[#FFC800]/30 shadow-xl max-h-72 aspect-square mx-auto">
+                      <div className="mb-6 rounded-2xl overflow-hidden border border-slate-200 shadow-md max-h-72 aspect-square mx-auto bg-slate-50">
                         <img
                           src={current.image}
                           alt={`${current.name} Official Flyer`}
@@ -387,25 +360,25 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
                     </div>
 
                     <div className="space-y-2 mb-6">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-slate-600">
                         Flavor Highlights:
                       </h4>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         {current.notes.map((note, idx) => (
-                          <div key={idx} className="flex items-center gap-1.5 p-2 rounded-lg bg-[#0D203D] border border-[#1E3A5F] text-xs text-slate-200">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#FFC800] shrink-0" />
+                          <div key={idx} className="flex items-center gap-1.5 p-2 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-800">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                             <span>{note}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-[#1E3A5F] text-xs text-slate-300">
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-200 text-xs text-slate-600">
                       <div className="flex items-center gap-2">
                         <PopcornKingLogo className="scale-75" />
-                        <span className="font-bold text-white">Popcorn King Ghana</span>
+                        <span className="font-bold text-slate-900">Popcorn King Ghana</span>
                       </div>
-                      <span className="text-[#FFC800] font-bold">Accra, Ghana</span>
+                      <span className="text-amber-800 font-bold">Accra, Ghana</span>
                     </div>
 
                   </div>
@@ -417,23 +390,23 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
         </div>
 
         {/* Modal Footer Bar */}
-        <div className="p-4 bg-[#0D203D] border-t border-[#1E3A5F] flex items-center justify-between gap-3 text-xs text-slate-300 flex-wrap">
+        <div className="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3 text-xs text-slate-600 flex-wrap">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Official Popcorn King Brand Assets</span>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="px-3 py-1.5 rounded-lg bg-[#FFC800] text-[#0A192F] font-bold hover:bg-[#FFD700] transition-colors flex items-center gap-1"
+              className="px-3 py-1.5 rounded-lg bg-amber-400 text-slate-950 font-bold hover:bg-amber-500 transition-colors flex items-center gap-1 shadow-2xs"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print / Download Menu</span>
             </button>
             <button
               onClick={onClose}
-              className="px-3 py-1.5 rounded-lg bg-[#1E3A5F] text-white hover:bg-[#254673] transition-colors"
+              className="px-3 py-1.5 rounded-lg bg-slate-200 text-slate-800 hover:bg-slate-300 transition-colors"
             >
               Close
             </button>

@@ -10,7 +10,7 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-[#0A192F] relative border-t border-[#1E3A5F] text-white">
+    <section id="faq" className="py-20 bg-[#FAFAFA] relative border-t border-slate-200 text-slate-900">
       {/* Pattern */}
       <div className="absolute inset-0 bg-burst-pattern opacity-10 pointer-events-none" />
 
@@ -18,14 +18,14 @@ export const FaqSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFC800]/15 border border-[#FFC800]/30 text-[#FFC800] text-xs font-black uppercase tracking-wider mb-3">
-            <HelpCircle className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-black uppercase tracking-wider mb-3">
+            <HelpCircle className="w-3.5 h-3.5 text-amber-700" />
             <span>Got Questions?</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg mt-4">
+          <p className="text-slate-600 text-base sm:text-lg mt-4">
             Everything you need to know about ordering, delivery in Accra, live machine catering, pricing, and custom event packaging.
           </p>
         </div>
@@ -39,8 +39,8 @@ export const FaqSection: React.FC = () => {
                 key={faq.id}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'bg-[#0D203D] border-[#FFC800] shadow-xl'
-                    : 'bg-[#0D203D]/60 border-[#1E3A5F] hover:border-slate-500'
+                    ? 'bg-white border-amber-400 shadow-md ring-1 ring-amber-400'
+                    : 'bg-white border-slate-200 hover:border-slate-300 shadow-xs'
                 }`}
               >
                 <button
@@ -48,12 +48,12 @@ export const FaqSection: React.FC = () => {
                   onClick={() => toggleItem(faq.id)}
                   className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4"
                 >
-                  <span className="font-display text-base sm:text-lg font-bold text-white">
+                  <span className="font-display text-base sm:text-lg font-bold text-slate-900">
                     {faq.question}
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'bg-[#FFC800] text-[#0A192F] rotate-180' : 'bg-[#0A192F] text-slate-400'
+                      isOpen ? 'bg-amber-400 text-slate-950 rotate-180' : 'bg-slate-100 text-slate-500'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -61,7 +61,7 @@ export const FaqSection: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-[#1E3A5F] animate-in fade-in duration-200">
+                  <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 animate-in fade-in duration-200">
                     <p>{faq.answer}</p>
                   </div>
                 )}
@@ -71,12 +71,12 @@ export const FaqSection: React.FC = () => {
         </div>
 
         {/* Still Have Questions CTA */}
-        <div className="mt-12 text-center p-8 rounded-3xl bg-[#0D203D] border border-[#1E3A5F] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="mt-12 text-center p-8 rounded-3xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="text-left">
-            <h4 className="font-display text-xl font-bold text-white">
+            <h4 className="font-display text-xl font-bold text-slate-900">
               Still have a specific question?
             </h4>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1">
+            <p className="text-xs sm:text-sm text-slate-600 mt-1">
               Our Accra support team is active on WhatsApp to assist with instant responses.
             </p>
           </div>
@@ -84,7 +84,7 @@ export const FaqSection: React.FC = () => {
             href="https://wa.me/233550999008?text=Hello%20Popcorn%20King,%20I%20have%20a%20question%20about%20your%20services!"
             target="_blank"
             rel="noopener noreferrer"
-            className="whitespace-nowrap px-6 py-3.5 bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-xs uppercase tracking-wider rounded-xl flex items-center gap-2 shadow-lg shadow-[#FF4B3E]/30 transition-all"
+            className="whitespace-nowrap px-6 py-3.5 bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-xs uppercase tracking-wider rounded-xl flex items-center gap-2 shadow-md shadow-[#FF4B3E]/20 transition-all"
           >
             <MessageCircle className="w-4 h-4 fill-white" />
             <span>Chat on WhatsApp (+233 55 099 9008)</span>

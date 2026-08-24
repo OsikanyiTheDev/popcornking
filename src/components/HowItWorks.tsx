@@ -27,7 +27,7 @@ export const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 bg-[#0A192F] relative border-t border-[#1E3A5F] text-white">
+    <section id="how-it-works" className="py-20 bg-white relative border-t border-slate-200 text-slate-900">
       {/* Pattern */}
       <div className="absolute inset-0 bg-burst-pattern opacity-10 pointer-events-none" />
 
@@ -35,14 +35,14 @@ export const HowItWorks: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFC800]/15 border border-[#FFC800]/30 text-[#FFC800] text-xs font-black uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-black uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
             <span>Simple & Seamless</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
             How It Works
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg mt-4">
+          <p className="text-slate-600 text-base sm:text-lg mt-4">
             Getting fresh gourmet popcorn for your personal snack craving or booking an event catering station in Accra takes just three effortless steps.
           </p>
         </div>
@@ -54,32 +54,32 @@ export const HowItWorks: React.FC = () => {
             return (
               <div
                 key={step.number}
-                className="bg-[#0D203D] rounded-3xl border border-[#1E3A5F] p-8 flex flex-col justify-between relative group hover:border-[#FFC800]/60 transition-all duration-300 shadow-xl"
+                className="bg-slate-50 rounded-3xl border border-slate-200 p-8 flex flex-col justify-between relative group hover:border-amber-400/80 transition-all duration-300 shadow-sm hover:shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-display text-3xl sm:text-4xl font-black text-[#FFC800]">
+                    <span className="font-display text-3xl sm:text-4xl font-black text-amber-700">
                       {step.number}
                     </span>
-                    <div className="w-12 h-12 rounded-2xl bg-[#FFC800]/15 border border-[#FFC800]/30 flex items-center justify-center text-[#FFC800] group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-800 group-hover:scale-110 transition-transform">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>
 
-                  <span className="text-[11px] font-black text-[#FF4B3E] uppercase tracking-wider bg-[#0A192F] px-2.5 py-1 rounded-md border border-[#1E3A5F] inline-block mb-3">
+                  <span className="text-[11px] font-black text-[#FF4B3E] uppercase tracking-wider bg-white px-2.5 py-1 rounded-md border border-slate-200 inline-block mb-3 shadow-2xs">
                     {step.tag}
                   </span>
 
-                  <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-3">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                     {step.title}
                   </h3>
 
-                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                     {step.description}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-[#1E3A5F] flex items-center text-xs font-bold text-slate-400 group-hover:text-[#FFC800] transition-colors">
+                <div className="pt-6 mt-6 border-t border-slate-200 flex items-center text-xs font-bold text-slate-500 group-hover:text-amber-800 transition-colors">
                   <span>Step {idx + 1} of 3</span>
                   <ArrowRight className="w-4 h-4 ml-auto" />
                 </div>

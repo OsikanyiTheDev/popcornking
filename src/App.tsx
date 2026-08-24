@@ -123,14 +123,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-950 text-stone-100 selection:bg-amber-500 selection:text-stone-950 font-sans">
+    <div className="min-h-screen bg-[#FAFAFA] text-slate-900 selection:bg-amber-400 selection:text-slate-950 font-sans antialiased">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-24 right-4 z-50 bg-stone-900 border border-amber-500/50 text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300">
-          <div className="w-7 h-7 rounded-lg bg-amber-500 text-stone-950 flex items-center justify-center font-bold">
+        <div className="fixed top-24 right-4 z-50 bg-white border border-amber-400/80 text-slate-900 px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-bold">
             <Check className="w-4 h-4 stroke-[3]" />
           </div>
-          <span className="text-sm font-semibold">{toastMessage}</span>
+          <span className="text-sm font-semibold text-slate-800">{toastMessage}</span>
         </div>
       )}
 

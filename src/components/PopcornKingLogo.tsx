@@ -4,12 +4,14 @@ interface PopcornKingLogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl' | number;
   showText?: boolean;
+  lightText?: boolean;
 }
 
 export const PopcornKingLogo: React.FC<PopcornKingLogoProps> = ({
   className = '',
   size = 'md',
   showText = true,
+  lightText = false,
 }) => {
   const sizeDimensions: Record<string, { w: number; h: number }> = {
     sm: { w: 38, h: 38 },
@@ -32,7 +34,7 @@ export const PopcornKingLogo: React.FC<PopcornKingLogoProps> = ({
         viewBox="0 0 240 240"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="shrink-0 drop-shadow-md"
+        className="shrink-0 drop-shadow-sm"
       >
         {/* Red Star atop Crown */}
         <path
@@ -150,12 +152,12 @@ export const PopcornKingLogo: React.FC<PopcornKingLogoProps> = ({
         </text>
       </svg>
 
-      {/* Optional Side Typography */}
+      {/* Side Typography */}
       {showText && (
         <div className="flex flex-col">
           <div className="flex items-center gap-1 font-display font-black leading-none tracking-tight">
-            <span className="text-white text-xl sm:text-2xl">POPCORN</span>
-            <span className="text-[#FFC800] text-xl sm:text-2xl">KING</span>
+            <span className={`text-xl sm:text-2xl ${lightText ? 'text-white' : 'text-slate-900'}`}>POPCORN</span>
+            <span className="text-[#D97706] text-xl sm:text-2xl">KING</span>
           </div>
           <span className="text-[10px] font-bold tracking-widest text-[#FF4B3E] uppercase mt-0.5">
             Accra, Ghana

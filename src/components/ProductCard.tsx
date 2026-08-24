@@ -48,9 +48,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
       )}`;
 
   return (
-    <div className="bg-[#0D203D] rounded-3xl border border-[#1E3A5F] hover:border-[#FFC800]/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-xl hover:shadow-2xl hover:shadow-[#FFC800]/10 text-white">
+    <div className="bg-white rounded-3xl border border-slate-200 hover:border-amber-400/80 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-md hover:shadow-xl text-slate-900">
       {/* Product Image & Badges */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0A192F]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
         <img
           src={product.image}
           alt={product.name}
@@ -59,29 +59,29 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
         />
 
         {/* Gradient Shadow */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D203D] via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
 
         {/* Category Pill Top Left */}
         <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 pointer-events-none">
-          <span className="text-[10px] font-black px-2.5 py-1 rounded-full bg-[#0A192F]/90 backdrop-blur-sm text-[#FFC800] border border-[#FFC800]/30 shadow-md uppercase tracking-wider">
+          <span className="text-[10px] font-black px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm text-slate-900 border border-slate-200 shadow-xs uppercase tracking-wider">
             {product.categoryLabel}
           </span>
           {product.badge && (
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#FF4B3E] text-white shadow-md">
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#FF4B3E] text-white shadow-xs">
               {product.badge}
             </span>
           )}
         </div>
 
         {/* Price Tag Overlay Top Right */}
-        <div className="absolute top-3 right-3 bg-[#FFC800] text-[#0A192F] font-black text-xs px-2.5 py-1 rounded-xl shadow-lg uppercase tracking-wider">
+        <div className="absolute top-3 right-3 bg-[#FFC800] text-[#0A192F] font-black text-xs px-2.5 py-1 rounded-xl shadow-md uppercase tracking-wider">
           {isQuoteOnRequest ? <em className="not-italic">Quote on Request</em> : product.priceDisplay}
         </div>
 
         {/* Info Toggle Button */}
         <button
           onClick={() => setShowDetails(!showDetails)}
-          className="absolute bottom-3 right-3 p-2 rounded-full bg-[#0A192F]/80 hover:bg-[#0A192F] text-slate-300 hover:text-[#FFC800] backdrop-blur-sm border border-[#1E3A5F] transition-colors"
+          className="absolute bottom-3 right-3 p-2 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-amber-700 backdrop-blur-sm border border-slate-200 transition-colors shadow-xs"
           title="Item details"
         >
           <Info className="w-4 h-4" />
@@ -94,18 +94,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
           {/* Header & Description */}
           <div className="mb-2">
             <div className="flex items-start justify-between gap-2">
-              <h3 className="font-display text-xl font-bold text-white group-hover:text-[#FFC800] transition-colors leading-tight">
+              <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-amber-700 transition-colors leading-tight">
                 {product.name}
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 italic mt-1.5 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 italic mt-1.5 leading-relaxed">
               &ldquo;{product.description}&rdquo;
             </p>
           </div>
 
           {/* Details Drawer if open */}
           {showDetails && (
-            <div className="my-3 p-3 rounded-xl bg-[#0A192F] border border-[#1E3A5F] text-xs text-slate-200 space-y-1.5 animate-in fade-in duration-200">
+            <div className="my-3 p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-1.5 animate-in fade-in duration-200">
               <p><strong>Category:</strong> {product.categoryLabel}</p>
               <p><strong>Description:</strong> <em>{product.description}</em></p>
               {product.unitLabel && <p><strong>Serving Style:</strong> {product.unitLabel}</p>}
@@ -118,7 +118,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
               {product.flavorNotes.map((note) => (
                 <span
                   key={note}
-                  className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-[#0A192F] text-slate-300 border border-[#1E3A5F]"
+                  className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 border border-amber-200"
                 >
                   {note}
                 </span>
@@ -129,7 +129,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
           {/* Flavor/Drink Option Selector if available (e.g. Vanilla / Chocolate / Strawberry) */}
           {product.options && product.options.length > 0 && (
             <div className="mt-3">
-              <label className="text-[11px] font-bold text-[#FFC800] uppercase tracking-wider block mb-1.5">
+              <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-1.5">
                 Choose Variety:
               </label>
               <div className="flex flex-wrap gap-1.5">
@@ -140,8 +140,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
                     onClick={() => setSelectedOption(opt)}
                     className={`text-xs px-2.5 py-1 rounded-lg border transition-all ${
                       selectedOption === opt
-                        ? 'bg-[#FFC800] text-[#0A192F] font-bold border-[#FFC800]'
-                        : 'bg-[#0A192F] text-slate-300 border-[#1E3A5F] hover:border-slate-500'
+                        ? 'bg-[#FFC800] text-[#0A192F] font-bold border-[#FFC800] shadow-2xs'
+                        : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-400'
                     }`}
                   >
                     {opt}
@@ -154,7 +154,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
           {/* Packaging / Portion Option Selector if multiple sizes */}
           {product.sizes && product.sizes.length > 1 && (
             <div className="mt-3">
-              <label className="text-[11px] font-bold text-[#FFC800] uppercase tracking-wider block mb-1.5">
+              <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-1.5">
                 Select Size / Format:
               </label>
               <div className="grid grid-cols-1 gap-1.5">
@@ -167,19 +167,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
                       onClick={() => setSelectedSize(size)}
                       className={`text-left px-3 py-2 rounded-xl border transition-all flex items-center justify-between ${
                         isSelected
-                          ? 'bg-[#FFC800]/15 border-[#FFC800] text-white shadow-sm'
-                          : 'bg-[#0A192F] border-[#1E3A5F] text-slate-400 hover:border-slate-600 hover:text-slate-200'
+                          ? 'bg-amber-50 border-amber-400 text-slate-900 shadow-2xs'
+                          : 'bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-300 hover:text-slate-900'
                       }`}
                     >
                       <div>
-                        <span className={`text-xs font-bold ${isSelected ? 'text-[#FFC800]' : 'text-slate-200'}`}>
+                        <span className={`text-xs font-bold ${isSelected ? 'text-amber-900' : 'text-slate-800'}`}>
                           {size.name}
                         </span>
                         {size.servings && (
-                          <span className="text-[10px] text-slate-400 ml-1.5 italic">({size.servings})</span>
+                          <span className="text-[10px] text-slate-500 ml-1.5 italic">({size.servings})</span>
                         )}
                       </div>
-                      <span className="text-xs font-black text-[#FFC800]">
+                      <span className="text-xs font-black text-amber-700">
                         {size.priceDisplay || `GH₵ ${size.priceGHS}`}
                       </span>
                     </button>
@@ -191,31 +191,31 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
         </div>
 
         {/* Pricing & Actions */}
-        <div className="pt-4 mt-4 border-t border-[#1E3A5F]">
+        <div className="pt-4 mt-4 border-t border-slate-100">
           {!isQuoteOnRequest ? (
             <>
               <div className="flex items-center justify-between mb-3.5">
                 <div>
-                  <span className="text-[11px] text-slate-400 block italic">Total Price</span>
-                  <span className="font-display text-2xl font-black text-white">
+                  <span className="text-[11px] text-slate-500 block italic">Total Price</span>
+                  <span className="font-display text-2xl font-black text-slate-900">
                     GH₵ {(selectedSize.priceGHS * quantity).toFixed(2)}
                   </span>
                 </div>
 
                 {/* Quantity Selector */}
-                <div className="flex items-center bg-[#0A192F] border border-[#1E3A5F] rounded-xl p-0.5">
+                <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl p-0.5">
                   <button
                     type="button"
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-7 h-7 flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#1E3A5F] rounded-lg text-sm font-bold transition-colors"
+                    className="w-7 h-7 flex items-center justify-center text-slate-600 hover:text-slate-950 hover:bg-slate-200 rounded-lg text-sm font-bold transition-colors"
                   >
                     -
                   </button>
-                  <span className="w-8 text-center text-xs font-bold text-white">{quantity}</span>
+                  <span className="w-8 text-center text-xs font-bold text-slate-900">{quantity}</span>
                   <button
                     type="button"
                     onClick={() => setQuantity(quantity + 1)}
-                    className="w-7 h-7 flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#1E3A5F] rounded-lg text-sm font-bold transition-colors"
+                    className="w-7 h-7 flex items-center justify-center text-slate-600 hover:text-slate-950 hover:bg-slate-200 rounded-lg text-sm font-bold transition-colors"
                   >
                     +
                   </button>
@@ -227,9 +227,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
                 <button
                   type="button"
                   onClick={handleAdd}
-                  className={`w-full py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md uppercase tracking-wider ${
+                  className={`w-full py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-xs uppercase tracking-wider ${
                     addedAnimation
-                      ? 'bg-emerald-500 text-[#0A192F]'
+                      ? 'bg-emerald-500 text-white'
                       : 'bg-[#FFC800] hover:bg-[#e6b400] text-[#0A192F]'
                   }`}
                 >
@@ -250,7 +250,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
                   href={directWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2.5 px-3 rounded-xl font-bold text-xs bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-1.5 transition-colors text-center shadow-md uppercase tracking-wider"
+                  className="w-full py-2.5 px-3 rounded-xl font-bold text-xs bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-1.5 transition-colors text-center shadow-xs uppercase tracking-wider"
                 >
                   <MessageCircle className="w-3.5 h-3.5 fill-white" />
                   <span>WhatsApp</span>
@@ -260,8 +260,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
           ) : (
             <div className="space-y-2">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs text-slate-300 italic">Custom Event Pricing</span>
-                <span className="text-xs font-bold text-[#FFC800] uppercase tracking-wider">
+                <span className="text-xs text-slate-500 italic">Custom Event Pricing</span>
+                <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">
                   <em>*Quote on Request*</em>
                 </span>
               </div>
@@ -269,7 +269,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
                 href={directWhatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl font-bold text-xs bg-[#FF4B3E] hover:bg-[#ff3526] text-white flex items-center justify-center gap-2 transition-all text-center shadow-lg uppercase tracking-wider"
+                className="w-full py-3 px-4 rounded-xl font-bold text-xs bg-[#FF4B3E] hover:bg-[#ff3526] text-white flex items-center justify-center gap-2 transition-all text-center shadow-md uppercase tracking-wider"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Request Official Quote</span>
