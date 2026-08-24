@@ -7,9 +7,10 @@ interface HeroProps {
   onOrderClick: () => void;
   onBookClick: () => void;
   onOpenPhysicalMenu?: () => void;
+  onOpenAiConcierge?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhysicalMenu }) => {
+export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhysicalMenu, onOpenAiConcierge }) => {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-amber-50/60 via-white to-[#FAFAFA] text-slate-900 border-b border-slate-200/70">
       {/* Burst & Wave Geometric Pattern Overlay */}
@@ -109,14 +110,25 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
                   <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                   <span>Official Signature Popcorn Flavours</span>
                 </p>
-                {onOpenPhysicalMenu && (
-                  <button
-                    onClick={onOpenPhysicalMenu}
-                    className="text-xs font-bold text-slate-600 hover:text-amber-700 underline flex items-center gap-1 transition-colors"
-                  >
-                    <span>📄 View Physical Printed Menu & Flyers</span>
-                  </button>
-                )}
+                <div className="flex items-center gap-3">
+                  {onOpenAiConcierge && (
+                    <button
+                      onClick={onOpenAiConcierge}
+                      className="text-xs font-bold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-300 px-2.5 py-1 rounded-lg flex items-center gap-1.5 transition-colors"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 fill-amber-500" />
+                      <span>✨ Ask AI Flavor & Event Concierge</span>
+                    </button>
+                  )}
+                  {onOpenPhysicalMenu && (
+                    <button
+                      onClick={onOpenPhysicalMenu}
+                      className="text-xs font-bold text-slate-600 hover:text-amber-700 underline flex items-center gap-1 transition-colors"
+                    >
+                      <span>📄 Printed Menu</span>
+                    </button>
+                  )}
+                </div>
               </div>
               <div className="flex flex-wrap gap-2 text-xs">
                 {['Classic Sea Salt', 'Sweet Caramel', 'Rich Chocolate', 'Milkyway', 'Vibrant Rainbow'].map((flv) => (

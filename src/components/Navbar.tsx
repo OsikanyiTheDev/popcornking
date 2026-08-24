@@ -8,9 +8,16 @@ interface NavbarProps {
   onOpenCart: () => void;
   onOpenBooking: () => void;
   onOpenPhysicalMenu?: () => void;
+  onOpenAiConcierge?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ cartItems, onOpenCart, onOpenBooking, onOpenPhysicalMenu }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  cartItems,
+  onOpenCart,
+  onOpenBooking,
+  onOpenPhysicalMenu,
+  onOpenAiConcierge,
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -78,6 +85,18 @@ export const Navbar: React.FC<NavbarProps> = ({ cartItems, onOpenCart, onOpenBoo
 
           {/* Right Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* AI Flavor & Event Concierge Button */}
+            {onOpenAiConcierge && (
+              <button
+                onClick={onOpenAiConcierge}
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-300/80 text-amber-950 font-bold text-xs shadow-xs transition-all"
+                title="Ask Popcorn King AI Concierge"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-600 fill-amber-500" />
+                <span>AI Concierge</span>
+              </button>
+            )}
+
             {/* Cart Button */}
             <button
               onClick={onOpenCart}
@@ -142,6 +161,19 @@ export const Navbar: React.FC<NavbarProps> = ({ cartItems, onOpenCart, onOpenBoo
             ))}
 
             <div className="pt-4 flex flex-col gap-3">
+              {onOpenAiConcierge && (
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenAiConcierge();
+                  }}
+                  className="w-full bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 font-bold py-2.5 rounded-xl text-center flex items-center justify-center gap-2 text-sm shadow-xs"
+                >
+                  <Sparkles className="w-4 h-4 fill-slate-950" />
+                  <span>✨ Ask AI Gourmet & Event Concierge</span>
+                </button>
+              )}
+
               {onOpenPhysicalMenu && (
                 <button
                   onClick={() => {
