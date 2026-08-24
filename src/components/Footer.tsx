@@ -49,11 +49,11 @@ export const Footer: React.FC = () => {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61593377867403"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-amber-400 text-slate-200 hover:text-slate-950 flex items-center justify-center border border-slate-700 transition-colors"
-                title="Facebook"
+                title="Facebook: Popcorn King"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href="mailto:hello@popcornkinggh.com" className="hover:text-white">hello@popcornkinggh.com</a>
+                <a href="mailto:jillskillion@gmail.com" className="hover:text-white">jillskillion@gmail.com</a>
               </p>
             </div>
           </div>

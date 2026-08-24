@@ -22,17 +22,17 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
       <div className="absolute top-1/3 right-10 w-[350px] h-[350px] bg-rose-200/25 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
-          {/* Left Column: Core Positioning & High-Contrast CTAs */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+          {/* Left Column: Tagline & Desktop Content */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left order-1">
             
             {/* Location & Freshness Badge */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/90 border border-amber-300/80 text-amber-950 text-xs sm:text-sm font-bold mb-6 shadow-xs"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/90 border border-amber-300/80 text-amber-950 text-xs sm:text-sm font-bold mb-4 sm:mb-6 shadow-xs"
             >
               <span className="w-2 h-2 rounded-full bg-[#FF4B3E] animate-ping" />
               <MapPin className="w-4 h-4 text-amber-700 shrink-0" />
@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.05] mb-6"
+              className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.05] mb-4 sm:mb-6"
             >
               Fresh popcorn. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 drop-shadow-xs">
@@ -52,22 +52,22 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
               </span>
             </motion.h1>
 
-            {/* Core Narrative */}
+            {/* Desktop Narrative (hidden on mobile, rendered below the image on mobile) */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-xl text-slate-700 max-w-2xl leading-relaxed mb-8 font-normal"
+              className="hidden lg:block text-base sm:text-xl text-slate-700 max-w-2xl leading-relaxed mb-8 font-normal"
             >
               Popcorn King transforms a humble street favorite into a premium, memorable experience — whether you are craving a crunchy fresh snack bag or booking live commercial cart catering for a 500-person wedding or corporate summit in Accra.
             </motion.p>
 
-            {/* Dual CTAs (Electric Coral & Royalty Gold) */}
+            {/* Desktop Dual CTAs (hidden on mobile, rendered below the image on mobile) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10"
+              className="hidden lg:flex w-full sm:w-auto flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10"
             >
               {/* Electric Coral Primary CTA: Book for Event */}
               <button
@@ -86,25 +86,14 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
               >
                 <span>Order Fresh (Retail)</span>
               </button>
-
-              {/* Direct WhatsApp CTA for Mobile */}
-              <a
-                href="https://wa.me/233550999008?text=Hello%20Popcorn%20King,%20I%20would%20like%20to%20order%20popcorn!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex sm:hidden items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base px-6 py-3.5 rounded-2xl shadow-md"
-              >
-                <MessageCircle className="w-5 h-5 fill-white" />
-                <span>WhatsApp: +233 55 099 9008</span>
-              </a>
             </motion.div>
 
-            {/* Quick Flavour Strip & Brand Proof */}
+            {/* Desktop Quick Flavour Strip (hidden on mobile, rendered below the image on mobile) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="pt-6 border-t border-slate-200 w-full"
+              className="hidden lg:block pt-6 border-t border-slate-200 w-full"
             >
               <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
                 <p className="text-xs font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1.5">
@@ -145,8 +134,8 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
 
           </div>
 
-          {/* Right Column: Hero Visual Showcase with Brand Emblem */}
-          <div className="lg:col-span-5 relative flex justify-center">
+          {/* Hero Visual Showcase: Positioned right after headline on mobile */}
+          <div className="lg:col-span-5 relative flex justify-center order-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -207,6 +196,102 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
               </div>
 
             </motion.div>
+          </div>
+
+          {/* Mobile Narrative & CTAs: Positioned AFTER the image on mobile */}
+          <div className="lg:hidden col-span-1 flex flex-col items-start text-left order-3 space-y-6 pt-2">
+            
+            {/* Core Narrative on Mobile */}
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal"
+            >
+              Popcorn King transforms a humble street favorite into a premium, memorable experience — whether you are craving a crunchy fresh snack bag or booking live commercial cart catering for a 500-person wedding or corporate summit in Accra.
+            </motion.p>
+
+            {/* Mobile CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="w-full flex flex-col items-stretch gap-3"
+            >
+              {/* Electric Coral Primary CTA: Book for Event */}
+              <button
+                onClick={onBookClick}
+                className="inline-flex items-center justify-center gap-3 bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-base px-6 py-4 rounded-2xl shadow-lg shadow-[#FF4B3E]/25 uppercase tracking-wider"
+              >
+                <Calendar className="w-5 h-5" />
+                <span>Book Event Catering</span>
+                <ArrowRight className="w-5 h-5 stroke-[2.5]" />
+              </button>
+
+              {/* Royalty Gold Secondary CTA: Order Fresh Retail */}
+              <button
+                onClick={onOrderClick}
+                className="inline-flex items-center justify-center gap-2.5 bg-[#FFC800] hover:bg-[#e6b400] text-[#0A192F] font-black text-base px-6 py-4 rounded-2xl shadow-md uppercase tracking-wider"
+              >
+                <span>Order Fresh (Retail)</span>
+              </button>
+
+              {/* Direct WhatsApp CTA for Mobile */}
+              <a
+                href="https://wa.me/233550999008?text=Hello%20Popcorn%20King,%20I%20would%20like%20to%20order%20popcorn!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base px-6 py-3.5 rounded-2xl shadow-md"
+              >
+                <MessageCircle className="w-5 h-5 fill-white" />
+                <span>WhatsApp: +233 55 099 9008</span>
+              </a>
+            </motion.div>
+
+            {/* Mobile Quick Flavour Strip */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="pt-4 border-t border-slate-200 w-full"
+            >
+              <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                  <span>Official Signature Popcorn Flavours</span>
+                </p>
+                <div className="flex items-center gap-2">
+                  {onOpenAiConcierge && (
+                    <button
+                      onClick={onOpenAiConcierge}
+                      className="text-xs font-bold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-300 px-2.5 py-1 rounded-lg flex items-center gap-1.5 transition-colors"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 fill-amber-500" />
+                      <span>✨ AI Concierge</span>
+                    </button>
+                  )}
+                  {onOpenPhysicalMenu && (
+                    <button
+                      onClick={onOpenPhysicalMenu}
+                      className="text-xs font-bold text-slate-600 hover:text-amber-700 underline flex items-center gap-1 transition-colors"
+                    >
+                      <span>📄 Printed Menu</span>
+                    </button>
+                  )}
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 text-xs">
+                {['Classic Sea Salt', 'Sweet Caramel', 'Rich Chocolate', 'Milkyway', 'Vibrant Rainbow'].map((flv) => (
+                  <span
+                    key={flv}
+                    className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 font-semibold shadow-2xs"
+                  >
+                    🍿 {flv}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
           </div>
 
         </div>

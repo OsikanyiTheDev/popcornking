@@ -107,8 +107,8 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Email Address</p>
-                  <a href="mailto:hello@popcornkinggh.com" className="text-base font-bold text-slate-900 hover:text-amber-800 transition-colors">
-                    hello@popcornkinggh.com
+                  <a href="mailto:jillskillion@gmail.com" className="text-base font-bold text-slate-900 hover:text-amber-800 transition-colors">
+                    jillskillion@gmail.com
                   </a>
                   <p className="text-xs text-slate-500 mt-0.5">Corporate enquiries & formal proposals</p>
                 </div>
@@ -152,11 +152,11 @@ export const ContactSection: React.FC = () => {
                     <span>TikTok</span>
                   </a>
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/profile.php?id=61593377867403"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-xl bg-white hover:bg-slate-100 text-slate-700 hover:text-amber-800 border border-slate-200 transition-colors shadow-2xs"
-                    title="Facebook Popcorn King Ghana"
+                    title="Facebook Popcorn King"
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
