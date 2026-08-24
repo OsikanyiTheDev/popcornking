@@ -129,7 +129,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'faq-cost',
     category: 'catering',
     question: 'How much does event catering cost?',
-    answer: 'Our catering packages start from GH₵ 750 for pre-packaged party bags up to GH₵ 1,850 for our complete Live King Cart Experience (which includes our commercial glass machine, 3 hours of live popping, uniformed attendant, unlimited fresh popcorn, and branded packaging). Custom high-volume and festival packages are also available.',
+    answer: 'Our catering packages start from GH₵ 699.99 for Bulk Party Boxes and Crates (Ideal for 50 to 100 guests), GH₵ 1,499.99 for our Live Vending Station (Ideal for 50 - 150 guests), and GH₵ 3,499.99 for our Corporate Package (Ideal for 250 to 500 guests). Custom high-volume festival packages are also available.',
   },
   {
     id: 'faq-capacity',

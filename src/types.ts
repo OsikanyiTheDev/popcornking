@@ -50,7 +50,9 @@ export interface CateringPackage {
   tagline: string;
   minGuests: number;
   maxGuests: number;
+  capacityLabel?: string;
   startingPriceGHS: number;
+  priceDisplay?: string;
   popularFor: string;
   isBestSeller?: boolean;
   features: string[];

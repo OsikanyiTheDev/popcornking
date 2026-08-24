@@ -250,15 +250,16 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
                   </div>
                   <div className="space-y-3">
                     {[
-                      { name: 'Live Vending Station', desc: 'Vintage popping cart + uniformed chef + hot unlimited batches for 3 hrs', price: '*Quote on Request' },
-                      { name: 'Bulk Party Boxes', desc: 'Pre-packaged branded snack bags ready for birthdays, weddings & school fairs', price: '*Quote on Request' },
+                      { name: 'Live Vending Station', desc: 'Vintage popping cart + 2 uniformed attendants + hot unlimited batches (Ideal for 50 - 150 guests)', price: 'GH₵ 1,499.99' },
+                      { name: 'Bulk Party Boxes and Crates', desc: 'Pre-packaged branded snack bags/buckets delivered fresh (Ideal for 50 to 100 guests)', price: 'GH₵ 699.99' },
+                      { name: 'Corporate', desc: 'Dual high-output commercial live stations + VIP attendants (Ideal for 250 to 500 guests)', price: 'GH₵ 3,499.99' },
                     ].map((item, idx) => (
                       <div key={idx} className="flex justify-between items-start gap-4 p-2 rounded-xl hover:bg-slate-50 transition-colors">
                         <div>
                           <h4 className="font-bold text-slate-900 text-sm sm:text-base">{item.name}</h4>
                           <p className="text-xs text-slate-500 italic">{item.desc}</p>
                         </div>
-                        <span className="font-display font-bold text-xs sm:text-sm text-emerald-700 whitespace-nowrap bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-300">
+                        <span className="font-display font-black text-sm sm:text-base text-amber-800 whitespace-nowrap bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">
                           {item.price}
                         </span>
                       </div>

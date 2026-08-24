@@ -9,8 +9,8 @@ interface CateringSectionProps {
 }
 
 export const CateringSection: React.FC<CateringSectionProps> = ({ onQuoteSubmitSuccess }) => {
-  const [selectedPackage, setSelectedPackage] = useState<string>('live-king-station');
-  const [guestCount, setGuestCount] = useState<number>(120);
+  const [selectedPackage, setSelectedPackage] = useState<string>('live-vending-station');
+  const [guestCount, setGuestCount] = useState<number>(100);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -43,19 +43,17 @@ export const CateringSection: React.FC<CateringSectionProps> = ({ onQuoteSubmitS
 
   // Estimate calculation in GH₵
   const calculateEstimatedQuote = () => {
-    let base = 850;
-    if (selectedPackage === 'starter-party') {
-      base = Math.max(750, guestCount * 14);
-    } else if (selectedPackage === 'live-king-station') {
-      base = Math.max(1850, 1850 + (guestCount > 100 ? (guestCount - 100) * 11 : 0));
-    } else if (selectedPackage === 'grand-festival-station') {
-      base = Math.max(3800, 3800 + (guestCount > 300 ? (guestCount - 300) * 9 : 0));
-    } else if (selectedPackage === 'corporate-bulk-packs') {
-      base = Math.max(950, guestCount * 18);
+    let base = 1499.99;
+    if (selectedPackage === 'bulk-party-boxes') {
+      base = 699.99 + (guestCount > 100 ? (guestCount - 100) * 7.5 : 0);
+    } else if (selectedPackage === 'live-vending-station') {
+      base = 1499.99 + (guestCount > 150 ? (guestCount - 150) * 10 : 0);
+    } else if (selectedPackage === 'corporate-summit-vip') {
+      base = 3499.99 + (guestCount > 500 ? (guestCount - 500) * 8 : 0);
     }
 
     if (customBranding) base += 200;
-    return Math.round(base);
+    return Number(base.toFixed(2));
   };
 
   const estimatedTotal = calculateEstimatedQuote();
@@ -149,7 +147,7 @@ export const CateringSection: React.FC<CateringSectionProps> = ({ onQuoteSubmitS
         </div>
 
         {/* Catering Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {CATERING_PACKAGES.map((pkg) => {
             const isSelected = selectedPackage === pkg.id;
             return (
@@ -183,10 +181,10 @@ export const CateringSection: React.FC<CateringSectionProps> = ({ onQuoteSubmitS
                   <div className="my-4 py-3 border-y border-slate-100">
                     <span className="text-xs text-slate-500 block">Starting from:</span>
                     <span className="font-display text-2xl font-black text-slate-900">
-                      GH₵ {pkg.startingPriceGHS}
+                      {pkg.priceDisplay || `GH₵ ${pkg.startingPriceGHS.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
                     </span>
-                    <span className="text-[11px] text-slate-500 block mt-0.5">
-                      Ideal for {pkg.minGuests} – {pkg.maxGuests}+ guests
+                    <span className="text-[11px] text-slate-700 font-medium block mt-0.5">
+                      {pkg.capacityLabel || `Ideal for ${pkg.minGuests} – ${pkg.maxGuests} guests`}
                     </span>
                   </div>
 
