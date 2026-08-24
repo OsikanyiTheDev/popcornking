@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PopcornKingLogo } from './PopcornKingLogo';
 import { X, Printer, Sparkles, Phone, Instagram, CheckCircle2, Award, Download, Eye, Layers } from 'lucide-react';
+import { PopcornImages } from '../assets/images';
 
 interface PhysicalMenuModalProps {
   isOpen: boolean;
@@ -20,7 +21,7 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
       badge: '👑 Best Seller',
       tagline: 'Rich, crunchy golden glaze for serious sweet tooths',
       price: 'GH₵ 10',
-      image: '/src/assets/images/caramel_popcorn_flyer_1787530953937.jpg',
+      image: PopcornImages.caramelFlyer,
       color: 'from-[#D97706] to-[#92400E]',
       borderAccent: 'border-[#F59E0B]',
       description: 'Artisanal brown sugar melted into thick golden butter glaze, coating every popped kernel in a crystal crunch.',
@@ -32,7 +33,7 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
       badge: '🍿 Cinema Favorite',
       tagline: 'Light, airy, perfectly salted traditional style',
       price: 'GH₵ 10',
-      image: '/src/assets/images/sea_salt_flyer_1787530969931.jpg',
+      image: PopcornImages.seaSaltFlyer,
       color: 'from-[#0284C7] to-[#0369A1]',
       borderAccent: 'border-[#38BDF8]',
       description: 'Pristine, fluffy kernels tossed with fine Atlantic sea salt crystals for the ultimate pure movie theater experience.',
@@ -44,7 +45,7 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
       badge: '🍫 Premium Cocoa',
       tagline: 'Indulgent cocoa glaze over crispy kernels',
       price: 'GH₵ 20',
-      image: '/src/assets/images/chocolate_popcorn_flyer_1787530983913.jpg',
+      image: PopcornImages.chocolateFlyer,
       color: 'from-[#78350F] to-[#451A03]',
       borderAccent: 'border-[#B45309]',
       description: 'Velvety Ghanaian cocoa glaze coated over hot crispy popcorn, delivering a rich chocolatey explosion.',
@@ -56,7 +57,7 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
       badge: '✨ Sweet Milk Drizzle',
       tagline: 'Creamy chocolate drizzled with sweet milk notes',
       price: 'GH₵ 10',
-      image: '/src/assets/images/milkyway_popcorn_flyer_1787530999860.jpg',
+      image: PopcornImages.milkywayFlyer,
       color: 'from-[#4C1D95] to-[#312E81]',
       borderAccent: 'border-[#818CF8]',
       description: 'Dual layer of creamy milk glaze and luscious chocolate notes crafted for a delightful, silky taste profile.',
@@ -68,7 +69,7 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
       badge: '🌈 Party Hit',
       tagline: 'Fun, colorful candied mix packed with flavor',
       price: 'GH₵ 10',
-      image: '/src/assets/images/rainbow_popcorn_flyer_1787531014949.jpg',
+      image: PopcornImages.rainbowFlyer,
       color: 'from-[#BE185D] via-[#7C3AED] to-[#047857]',
       borderAccent: 'border-[#F472B6]',
       description: 'A dazzling festive mix of candied jewel-toned kernels in strawberry red, blue raspberry, grape, and sunshine citrus.',
@@ -340,6 +341,10 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
                         <img
                           src={current.image}
                           alt={`${current.name} Official Flyer`}
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1572177191856-3cde618dee1f?auto=format&fit=crop&w=800&q=80';
+                          }}
                           className="w-full h-full object-cover"
                         />
                       </div>

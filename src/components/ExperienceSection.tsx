@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles, MessageCircle } from 'lucide-react';
+import { PopcornImages } from '../assets/images';
 
 export const ExperienceSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -10,7 +11,7 @@ export const ExperienceSection: React.FC = () => {
       title: 'Commercial Popping Carts',
       subtitle: 'Sleek, eye-catching retro & modern equipment',
       description: 'Our certified commercial glass popping stations and vintage mobile carts are designed to be a vibrant visual centerpiece at any wedding, birthday, or corporate gala in Accra.',
-      image: '/src/assets/images/popcorn_event_setup_1787441074590.jpg',
+      image: PopcornImages.eventSetup,
       points: [
         'Heated glass display keeping popcorn steaming hot, fresh & crisp',
         'Built-in warmers and stainless steel hygienic kettles',
@@ -22,7 +23,7 @@ export const ExperienceSection: React.FC = () => {
       title: 'Live Artisan Preparation',
       subtitle: 'The irresistible aroma of freshly popped corn',
       description: 'Nothing compares to the sensory magic of hearing corn pop and watching rich buttery caramel glaze tumble over steaming kernels right before your guests’ eyes.',
-      image: '/src/assets/images/popcorn_caramel_gourmet_1787441086862.jpg',
+      image: PopcornImages.caramelGourmet,
       points: [
         '100% premium non-GMO corn popped in pure coconut and sunflower oil',
         'Handcrafted recipes: Caramel, Milky Way, Rainbow, Classic Sea Salt, Chocolate & Ginger',
@@ -34,7 +35,7 @@ export const ExperienceSection: React.FC = () => {
       title: 'Custom Branded Packaging',
       subtitle: 'Your logo, colors & celebration theme',
       description: 'From iconic Popcorn King royal gold crown tubs to custom corporate logo stickers, wedding hashtags, and birthday party packs that guests cherish.',
-      image: '/src/assets/images/popcorn_cup_classic_logo_1787530651749.jpg',
+      image: PopcornImages.cupClassicLogo,
       points: [
         'Food-grade grease-proof tubs, cones, and aroma-sealed foil bags',
         'Custom sticker printing and personalized brand color matching',
@@ -46,7 +47,7 @@ export const ExperienceSection: React.FC = () => {
       title: 'Uniformed Attendants & Smiles',
       subtitle: 'Professional hospitality with Ghanaian warmth',
       description: 'Our trained, certified, and friendly attendants arrive early, manage all station setup, serve your guests with welcoming smiles, and leave the venue spotless.',
-      image: '/src/assets/images/popcorn_vending_stand_1787441100261.jpg',
+      image: PopcornImages.vendingStand,
       points: [
         'Polished, uniformed, food safety-certified catering crew',
         'Warm, polite, and rapid service to keep lines moving effortlessly',
@@ -110,6 +111,9 @@ export const ExperienceSection: React.FC = () => {
                     src={step.image}
                     alt={step.title}
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1572177191856-3cde618dee1f?auto=format&fit=crop&w=800&q=80';
+                    }}
                     className="w-full h-full object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />

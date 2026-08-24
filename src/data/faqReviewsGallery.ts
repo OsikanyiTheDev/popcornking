@@ -1,60 +1,61 @@
 import { GalleryItem, ReviewItem, FaqItem } from '../types';
+import { PopcornImages } from '../assets/images';
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'gal-live-kente',
     title: 'Live Dual Popping Station Setup',
     category: 'events',
-    image: '/src/assets/images/live_event_station_1787527845374.jpg',
+    image: PopcornImages.liveEventStation,
     caption: 'Dual commercial glass kettle stations with warm glowing lamps on traditional Kente runner and fresh event decor in Accra.',
   },
   {
     id: 'gal-vip-table',
     title: 'VIP Banquet Place Setting Favors',
     category: 'events',
-    image: '/src/assets/images/vip_table_popcorn_1787527863353.jpg',
+    image: PopcornImages.vipTable,
     caption: 'Signature Popcorn King branded cups served at every guest seat for luxury outdoor banquet and wedding receptions in Accra.',
   },
   {
     id: 'gal-festival-youth',
     title: 'Campus Festival & Rx Games Moments',
     category: 'customers',
-    image: '/src/assets/images/festival_party_crowd_1787527881079.jpg',
+    image: PopcornImages.festivalParty,
     caption: 'Joyful young crowd grabbing hot, fresh popcorn cups and snapping photos by our live popping station.',
   },
   {
     id: 'gal-corporate-retreat',
     title: 'Corporate Gathering & Team Retreats',
     category: 'events',
-    image: '/src/assets/images/corporate_retreat_live_1787527900231.jpg',
+    image: PopcornImages.corporateRetreat,
     caption: 'Uniformed Popcorn King team serving freshly made sweet and savory popcorn at corporate retreats and outdoor company functions.',
   },
   {
     id: 'gal-caramel',
     title: 'Sweet Caramel Glazed Popcorn',
     category: 'flavours',
-    image: '/src/assets/images/popcorn_caramel_gourmet_1787441086862.jpg',
+    image: PopcornImages.caramelGourmet,
     caption: 'Golden amber crunchy caramel glaze handcrafted for true sweet lovers (GH₵ 10).',
   },
   {
     id: 'gal-hero-cup',
     title: 'Signature Popcorn King Round Cup',
     category: 'flavours',
-    image: '/src/assets/images/popcorn_cup_classic_logo_1787530651749.jpg',
+    image: PopcornImages.cupClassicLogo,
     caption: 'Individual single-serve round cup with iconic yellow crown branding.',
   },
   {
     id: 'gal-event-setup',
     title: 'Garden Wedding & Private Party Setup',
     category: 'machines',
-    image: '/src/assets/images/popcorn_event_setup_1787441074590.jpg',
+    image: PopcornImages.eventSetup,
     caption: 'Mobile popping stand with illuminated warmer and freshly popped artisan corn.',
   },
   {
     id: 'gal-vending-stand',
     title: 'Pop-up Stand & Festival Booth',
     category: 'machines',
-    image: '/src/assets/images/popcorn_vending_stand_1787441100261.jpg',
+    image: PopcornImages.vendingStand,
     caption: 'High-volume live popping booth ready to serve hundreds of guests at Accra festivals and sporting events.',
   },
 ];

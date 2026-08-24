@@ -2,6 +2,7 @@ import React from 'react';
 import { Sparkles, MapPin, ArrowRight, Calendar, MessageCircle, Flame, ShieldCheck, Star } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PopcornKingLogo } from './PopcornKingLogo';
+import { PopcornImages } from '../assets/images';
 
 interface HeroProps {
   onOrderClick: () => void;
@@ -155,7 +156,7 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
               {/* Decorative Frame with Gold border and subtle shadow */}
               <div className="relative rounded-3xl overflow-hidden border-2 border-amber-300 bg-white shadow-xl aspect-[4/3] sm:aspect-square">
                 <img
-                  src="/src/assets/images/popcorn_cup_classic_logo_1787530651749.jpg"
+                  src={PopcornImages.cupClassicLogo}
                   alt="Official Yellow Popcorn King Cup with Logo and Fresh Gourmet Popcorn"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"

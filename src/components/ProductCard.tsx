@@ -55,6 +55,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
           src={product.image}
           alt={product.name}
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            // Fallback to high quality crisp popcorn background
+            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1572177191856-3cde618dee1f?auto=format&fit=crop&w=800&q=80';
+          }}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         />
 

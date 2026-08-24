@@ -1,4 +1,5 @@
 import { MenuItem } from '../types';
+import { PopcornImages } from '../assets/images';
 
 export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
@@ -14,7 +15,7 @@ export const MENU_ITEMS: MenuItem[] = [
     priceDisplay: 'GH₵ 10',
     unitLabel: 'Signature Portion',
     flavorNotes: ['Light & Airy', 'Pure Sea Salt', 'Cinema Traditional'],
-    image: '/src/assets/images/sea_salt_flyer_1787530969931.jpg',
+    image: PopcornImages.seaSaltFlyer,
     badge: '🍿 Cinema Classic',
     isPopular: true,
     sizes: [
@@ -31,7 +32,7 @@ export const MENU_ITEMS: MenuItem[] = [
     priceDisplay: 'GH₵ 10',
     unitLabel: 'Signature Portion',
     flavorNotes: ['Golden Crunch', 'Rich Glaze', 'Caramel Butter'],
-    image: '/src/assets/images/caramel_popcorn_flyer_1787530953937.jpg',
+    image: PopcornImages.caramelFlyer,
     badge: '👑 Best Seller',
     isPopular: true,
     sizes: [
@@ -48,7 +49,7 @@ export const MENU_ITEMS: MenuItem[] = [
     priceDisplay: 'GH₵ 20',
     unitLabel: 'Signature Portion',
     flavorNotes: ['Ghanaian Cocoa', 'Crispy Glaze', 'Velvety Chocolate'],
-    image: '/src/assets/images/chocolate_popcorn_flyer_1787530983913.jpg',
+    image: PopcornImages.chocolateFlyer,
     badge: '🍫 Premium Cocoa',
     isPopular: true,
     sizes: [
@@ -65,7 +66,7 @@ export const MENU_ITEMS: MenuItem[] = [
     priceDisplay: 'GH₵ 10',
     unitLabel: 'Signature Portion',
     flavorNotes: ['Sweet Milk Drizzle', 'Creamy Chocolate', 'Silky Crunch'],
-    image: '/src/assets/images/milkyway_popcorn_flyer_1787530999860.jpg',
+    image: PopcornImages.milkywayFlyer,
     badge: '✨ Fan Favorite',
     isPopular: true,
     sizes: [
@@ -82,7 +83,7 @@ export const MENU_ITEMS: MenuItem[] = [
     priceDisplay: 'GH₵ 10',
     unitLabel: 'Signature Portion',
     flavorNotes: ['Candied Colors', 'Fruity Pop', 'Joyful Sweetness'],
-    image: '/src/assets/images/rainbow_popcorn_flyer_1787531014949.jpg',
+    image: PopcornImages.rainbowFlyer,
     badge: '🌈 Party Hit',
     isNew: true,
     isPopular: true,
@@ -147,7 +148,7 @@ export const MENU_ITEMS: MenuItem[] = [
     priceDisplay: 'GH₵ 1,499.99',
     unitLabel: 'Live On-Site Cart (50 - 150 guests)',
     flavorNotes: ['Live Popping Cart', '2 Uniformed Attendants', 'Ideal for 50 - 150 guests'],
-    image: '/src/assets/images/live_event_station_1787527845374.jpg',
+    image: PopcornImages.liveEventStation,
     badge: '👑 Live Popcorn Cart',
     isPopular: true,
     sizes: [
@@ -180,7 +181,7 @@ export const MENU_ITEMS: MenuItem[] = [
     priceDisplay: 'GH₵ 3,499.99',
     unitLabel: 'Corporate Summit Station (250 to 500 guests)',
     flavorNotes: ['Dual Live Stations', '3 Uniformed Servers', 'Ideal for 250 to 500 guests'],
-    image: '/src/assets/images/corporate_retreat_live_1787527900231.jpg',
+    image: PopcornImages.corporateRetreat,
     badge: '🏢 Corporate VIP Summit',
     sizes: [
       { id: 'corporate-package-booking', name: 'Corporate Package (250 to 500 guests)', weightLabel: '250 to 500 Guests', servings: '250-500 Guests', priceGHS: 3499.99, priceDisplay: 'GH₵ 3,499.99' },
