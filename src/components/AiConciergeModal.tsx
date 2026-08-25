@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Sparkles, Send, Bot, User, AlertCircle, RefreshCw, MessageSquareQuote } from 'lucide-react';
+import { generateLocalConciergeResponse } from '../data/aiConciergeKnowledge';
 
 interface AiConciergeModalProps {
   isOpen: boolean;
@@ -56,6 +57,7 @@ export const AiConciergeModal: React.FC<AiConciergeModalProps> = ({ isOpen, onCl
     setLoading(true);
 
     try {
+      // Attempt to query the backend API route if available
       const response = await fetch('/api/gemini', {
         method: 'POST',
         headers: {
@@ -64,53 +66,76 @@ export const AiConciergeModal: React.FC<AiConciergeModalProps> = ({ isOpen, onCl
         body: JSON.stringify({ prompt: query }),
       });
 
+      const contentType = response.headers.get('content-type');
+      
+      // If deployed as static files (e.g. on Firebase Hosting where /api/gemini returns index.html fallback):
+      if (!contentType || !contentType.includes('application/json')) {
+        // Fallback to intelligent embedded concierge response
+        const fallbackAnswer = generateLocalConciergeResponse(query);
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: fallbackAnswer,
+          },
+        ]);
+        return;
+      }
+
       const data = await response.json();
 
       if (!response.ok) {
         if (response.status === 429 || data.isRateLimit) {
+          const fallbackAnswer = generateLocalConciergeResponse(query);
           setMessages((prev) => [
             ...prev,
             {
               role: 'assistant',
-              content:
-                data.fallbackText ||
-                '⚠️ High traffic on the free tier! Please wait a few seconds and try again, or chat directly with our team on WhatsApp at +233 55 099 9008.',
-              isRateLimit: true,
+              content: `${fallbackAnswer}\n\n*(Note: Instant estimate provided. You can also reach our live Accra catering coordinator on WhatsApp at +233 55 099 9008)*`,
             },
           ]);
           return;
         }
 
         if (data.isMissingKey) {
+          const fallbackAnswer = generateLocalConciergeResponse(query);
           setMessages((prev) => [
             ...prev,
             {
               role: 'assistant',
-              content:
-                '⚙️ The `GEMINI_API_KEY` is not yet configured. Please set `GEMINI_API_KEY` in your environment variables (e.g. in Vercel or `.env.local`).',
-              isError: true,
+              content: fallbackAnswer,
             },
           ]);
           return;
         }
 
-        throw new Error(data.error || 'Failed to get response');
+        // Default to local knowledge on other API errors
+        const fallbackAnswer = generateLocalConciergeResponse(query);
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: fallbackAnswer,
+          },
+        ]);
+        return;
       }
 
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content: data.text || 'Popcorn King is at your service!',
+          content: data.text || generateLocalConciergeResponse(query),
         },
       ]);
     } catch (err: any) {
+      // Offline / network failure / static hosting fallback
+      const fallbackAnswer = generateLocalConciergeResponse(query);
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content: `Something went wrong: ${err.message || 'Unable to connect'}. You can always contact our Accra team directly at +233 55 099 9008.`,
-          isError: true,
+          content: fallbackAnswer,
         },
       ]);
     } finally {
