@@ -21,7 +21,6 @@ import { CartDrawer } from './components/CartDrawer';
 import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { BulkInquiryModal } from './components/BulkInquiryModal';
 import { PhysicalMenuModal } from './components/PhysicalMenuModal';
-import { AiConciergeModal } from './components/AiConciergeModal';
 import { CartItem, PopcornProduct, PopcornSizeOption } from './types';
 import { Check, ShoppingBag } from 'lucide-react';
 
@@ -38,7 +37,6 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isBulkModalOpen, setIsBulkModalOpen] = useState(false);
   const [isPhysicalMenuOpen, setIsPhysicalMenuOpen] = useState(false);
-  const [isAiModalOpen, setIsAiModalOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -142,7 +140,6 @@ export default function App() {
         onOpenCart={() => setIsCartOpen(true)}
         onOpenBooking={() => scrollToSection('catering')}
         onOpenPhysicalMenu={() => setIsPhysicalMenuOpen(true)}
-        onOpenAiConcierge={() => setIsAiModalOpen(true)}
       />
 
       {/* Hero Section */}
@@ -150,7 +147,6 @@ export default function App() {
         onOrderClick={() => scrollToSection('flavours')}
         onBookClick={() => scrollToSection('catering')}
         onOpenPhysicalMenu={() => setIsPhysicalMenuOpen(true)}
-        onOpenAiConcierge={() => setIsAiModalOpen(true)}
       />
 
       {/* Products & Flavours Menu */}
@@ -217,16 +213,6 @@ export default function App() {
       <PhysicalMenuModal
         isOpen={isPhysicalMenuOpen}
         onClose={() => setIsPhysicalMenuOpen(false)}
-      />
-
-      {/* AI Gourmet Flavour & Event Concierge Modal */}
-      <AiConciergeModal
-        isOpen={isAiModalOpen}
-        onClose={() => setIsAiModalOpen(false)}
-        onOpenBooking={() => {
-          setIsAiModalOpen(false);
-          scrollToSection('catering');
-        }}
       />
     </div>
   );
