@@ -40,14 +40,9 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <PopcornKingLogo size={48} showText={true} />
-            </div>
+            <PopcornKingLogo size="lg" showText={true} />
 
-            <p className="font-script text-xl sm:text-2xl text-[#F5B800] font-bold">
-              fresh Popcorn. Big Moments!!!
-            </p>
-            <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed max-w-sm pt-1">
               Ghana's premier gourmet popcorn & live cart catering brand. Freshly popped daily with 7 signature flavours and high-output heated glass kettle carts for weddings, corporate summits, and celebrations across Accra.
             </p>
 

@@ -383,7 +383,7 @@ export const PhysicalMenuModal: React.FC<PhysicalMenuModalProps> = ({ isOpen, on
 
                     <div className="flex items-center justify-between pt-4 border-t border-neutral-800 text-xs text-neutral-400">
                       <div className="flex items-center gap-2">
-                        <PopcornKingLogo className="scale-75" />
+                        <PopcornKingLogo size="sm" showText={false} />
                         <span className="font-bold text-white">Popcorn King Ghana</span>
                       </div>
                       <span className="text-[#F5B800] font-bold">Accra, Ghana</span>
