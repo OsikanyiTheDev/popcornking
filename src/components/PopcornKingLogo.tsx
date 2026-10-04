@@ -11,12 +11,11 @@ export const PopcornKingLogo: React.FC<PopcornKingLogoProps> = ({
   className = '',
   size = 'md',
   showText = true,
-  lightText = false,
 }) => {
   const sizeDimensions: Record<string, { w: number; h: number }> = {
-    sm: { w: 38, h: 38 },
-    md: { w: 52, h: 52 },
-    lg: { w: 84, h: 84 },
+    sm: { w: 40, h: 40 },
+    md: { w: 56, h: 56 },
+    lg: { w: 88, h: 88 },
     xl: { w: 140, h: 140 },
   };
 
@@ -26,141 +25,157 @@ export const PopcornKingLogo: React.FC<PopcornKingLogoProps> = ({
       : sizeDimensions[size] || sizeDimensions.md;
 
   return (
-    <div className={`inline-flex items-center gap-2.5 select-none ${className}`}>
-      {/* Crisp Vector Graphic matching user's uploaded official emblem */}
+    <div className={`inline-flex items-center gap-3 select-none ${className}`}>
+      {/* Official Emblem Vector matching physical cart wrap & WhatsApp branding */}
       <svg
         width={w}
         height={h}
         viewBox="0 0 240 240"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="shrink-0 drop-shadow-sm"
+        className="shrink-0 drop-shadow-md"
       >
-        {/* Red Star atop Crown */}
+        {/* Deep Black Circular Disc with Popcorn Gold Outer Ring */}
+        <circle cx="120" cy="120" r="114" fill="#0D0D0D" stroke="#F5B800" strokeWidth="6" />
+        <circle cx="120" cy="120" r="106" stroke="#F5B800" strokeWidth="1.5" strokeOpacity="0.3" strokeDasharray="3 3" />
+
+        {/* Hand-Drawn Doodle Stars (Gold) */}
+        {/* Left Star */}
         <path
-          d="M120 16L123.5 25.5L133.5 25.5L125.5 31.5L128.5 41L120 35L111.5 41L114.5 31.5L106.5 25.5L116.5 25.5Z"
-          fill="#FF4B3E"
-          stroke="#0A192F"
+          d="M48 140L51 148L60 148L53 154L55 162L48 157L41 162L43 154L36 148L45 148Z"
+          stroke="#F5B800"
+          strokeWidth="1.75"
+          fill="none"
+        />
+        {/* Tiny Star */}
+        <path
+          d="M62 130L63.5 134L68 134L64.5 137L65.5 141L62 138.5L58.5 141L59.5 137L56 134L60.5 134Z"
+          stroke="#F5B800"
+          strokeWidth="1.25"
+          fill="none"
+        />
+        {/* Right Star */}
+        <path
+          d="M192 142L194 148L200 148L195 152L197 158L192 154L187 158L189 152L184 148L190 148Z"
+          stroke="#F5B800"
           strokeWidth="1.5"
-        />
-
-        {/* Small Burst Popcorn Flares */}
-        <circle cx="88" cy="85" r="4" fill="#FFC800" />
-        <circle cx="152" cy="85" r="4" fill="#FFC800" />
-        <path d="M78 92Q74 96 79 100Q83 95 78 92Z" fill="#FFC800" />
-        <path d="M162 92Q166 96 161 100Q157 95 162 92Z" fill="#FFC800" />
-
-        {/* Outer Shield Border (Double gold ring with navy fill) */}
-        <path
-          d="M62 86C62 86 62 165 120 206C178 165 178 86 178 86C178 86 142 80 120 80C98 80 62 86 62 86Z"
-          fill="#0A192F"
-          stroke="#FFC800"
-          strokeWidth="7"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M69 92C69 92 69 160 120 198C171 160 171 92 171 92C171 92 139 87 120 87C101 87 69 92 69 92Z"
-          stroke="#FFC800"
-          strokeWidth="2"
-          strokeOpacity="0.4"
           fill="none"
         />
 
-        {/* Royal Gold Crown */}
-        <path
-          d="M82 108L72 58L98 82L120 42L142 82L168 58L158 108Z"
-          fill="#FFC800"
-          stroke="#0A192F"
-          strokeWidth="6"
-          strokeLinejoin="round"
-        />
-        {/* Crown Jewel Spheres */}
-        <circle cx="72" cy="58" r="6" fill="#FFC800" stroke="#0A192F" strokeWidth="4" />
-        <circle cx="120" cy="42" r="7" fill="#FFC800" stroke="#0A192F" strokeWidth="4" />
-        <circle cx="168" cy="58" r="6" fill="#FFC800" stroke="#0A192F" strokeWidth="4" />
-        <circle cx="98" cy="82" r="5" fill="#FFD700" stroke="#0A192F" strokeWidth="3" />
-        <circle cx="142" cy="82" r="5" fill="#FFD700" stroke="#0A192F" strokeWidth="3" />
+        {/* Left: Striped Gold Popcorn Cup with Popped Kernels */}
+        <g transform="translate(24, 98) scale(0.65)">
+          {/* Tub Base */}
+          <path d="M12 40L22 92H56L66 40H12Z" fill="#F5B800" stroke="#0D0D0D" strokeWidth="3" />
+          {/* Black Stripes */}
+          <path d="M22 40L29 92H35L29 40H22Z" fill="#0D0D0D" />
+          <path d="M43 40L43 92H49L51 40H43Z" fill="#0D0D0D" />
+          {/* Kernels Overflowing */}
+          <circle cx="24" cy="34" r="8" fill="#FFFDF0" stroke="#F5B800" strokeWidth="2" />
+          <circle cx="38" cy="28" r="9" fill="#F5B800" stroke="#0D0D0D" strokeWidth="1.5" />
+          <circle cx="52" cy="34" r="8" fill="#FFFDF0" stroke="#F5B800" strokeWidth="2" />
+          <circle cx="32" cy="38" r="7" fill="#F5B800" />
+          <circle cx="44" cy="38" r="7" fill="#FFFDF0" />
+          <circle cx="39" cy="20" r="7" fill="#FFFDF0" stroke="#F5B800" strokeWidth="1.5" />
+        </g>
 
-        {/* Bursting Hot Popcorn Clouds from Crown */}
-        {/* Rear Popcorn Puff */}
-        <ellipse cx="146" cy="50" rx="14" ry="12" fill="#FDF3B8" stroke="#0A192F" strokeWidth="3.5" />
-        <ellipse cx="152" cy="44" rx="9" ry="8" fill="#FFFBEA" />
+        {/* Center Top: 5-Point Popcorn Crown */}
+        <g transform="translate(94, 62) scale(0.9)">
+          <path
+            d="M8 44L14 18L26 32L38 12L50 32L62 18L68 44Z"
+            fill="none"
+            stroke="#F5B800"
+            strokeWidth="4"
+            strokeLinejoin="round"
+            strokeLinecap="round"
+          />
+          {/* Crown Jewels (Spheres) */}
+          <circle cx="14" cy="18" r="3.5" fill="#FFFFFF" stroke="#F5B800" strokeWidth="2" />
+          <circle cx="38" cy="12" r="4.5" fill="#F5B800" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle cx="62" cy="18" r="3.5" fill="#FFFFFF" stroke="#F5B800" strokeWidth="2" />
+        </g>
 
-        {/* Main Central Exploding Kernels */}
-        <path
-          d="M102 108C95 102 96 90 106 85C104 76 114 68 123 72C130 66 142 70 144 78C152 78 158 87 154 96C160 104 154 116 144 116C138 122 124 123 118 117C110 121 100 116 102 108Z"
-          fill="#FDE68A"
-          stroke="#0A192F"
-          strokeWidth="6"
-          strokeLinejoin="round"
-        />
-        {/* Fluffy Kernel Highlights & Swirls */}
-        <path
-          d="M110 92C114 86 122 86 126 90C128 84 136 84 140 88"
-          stroke="#D97706"
-          strokeWidth="3.5"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <path
-          d="M116 106C122 112 134 110 138 102"
-          stroke="#D97706"
-          strokeWidth="3.5"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <ellipse cx="126" cy="98" rx="8" ry="6" fill="#FFFDF0" />
-
-        {/* Middle Banner Base */}
-        <rect
-          x="36"
-          y="114"
-          width="168"
-          height="52"
-          rx="12"
-          fill="#0A192F"
-          stroke="#FFC800"
-          strokeWidth="4.5"
-        />
-
-        {/* "POPCORN" text in Royalty Gold */}
+        {/* 3D POPCORN KING Wordmark */}
+        {/* 3D Extrusion Shadow (Dark Amber / Gold) */}
         <text
-          x="120"
-          y="136"
+          x="126"
+          y="126"
           textAnchor="middle"
-          fill="#FFC800"
-          fontSize="21"
+          fill="#B47B00"
+          fontSize="24"
           fontWeight="900"
-          fontFamily="'Syne', 'Arial Black', sans-serif"
-          letterSpacing="1.5"
+          fontFamily="'Syne', 'Poppins', sans-serif"
+          letterSpacing="0.5"
         >
-          POPCORN
+          POPCORN KING
         </text>
-
-        {/* "KING" text in Crisp White */}
+        {/* Main Golden Wordmark */}
         <text
-          x="120"
-          y="157"
+          x="124"
+          y="124"
+          textAnchor="middle"
+          fill="#F5B800"
+          fontSize="24"
+          fontWeight="900"
+          fontFamily="'Syne', 'Poppins', sans-serif"
+          letterSpacing="0.5"
+        >
+          POPCORN KING
+        </text>
+        {/* Top Crisp White Bevel Face */}
+        <text
+          x="123"
+          y="123"
           textAnchor="middle"
           fill="#FFFFFF"
-          fontSize="22"
+          fontSize="23.5"
           fontWeight="900"
-          fontFamily="'Syne', 'Arial Black', sans-serif"
-          letterSpacing="3"
+          fontFamily="'Syne', 'Poppins', sans-serif"
+          letterSpacing="0.5"
+          fillOpacity="0.9"
         >
-          KING
+          POPCORN KING
         </text>
+
+        {/* Tagline: "fresh Popcorn. Big Moments!!!" in Crisp White Script */}
+        <text
+          x="122"
+          y="146"
+          textAnchor="middle"
+          fill="#FFFFFF"
+          fontSize="14"
+          fontWeight="700"
+          fontFamily="'Caveat', cursive, sans-serif"
+          letterSpacing="0.5"
+        >
+          fresh Popcorn. Big Moments!!!
+        </text>
+
+        {/* Right Arrow Doodle (Gold) */}
+        <path
+          d="M176 166C168 168 158 171 148 172M148 172L156 167M148 172L158 176"
+          stroke="#F5B800"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+
+        {/* Bottom Left Hand-Drawn Smiley Face (Gold) */}
+        <g transform="translate(42, 168)">
+          <path d="M4 4L4 8M12 4L12 8" stroke="#F5B800" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M3 13C5 18 13 18 15 13" stroke="#F5B800" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+        </g>
       </svg>
 
-      {/* Side Typography */}
+      {/* Brand Text Lockup for Navigation & Footers */}
       {showText && (
         <div className="flex flex-col">
-          <div className="flex items-center gap-1 font-display font-black leading-none tracking-tight">
-            <span className={`text-xl sm:text-2xl ${lightText ? 'text-white' : 'text-slate-900'}`}>POPCORN</span>
-            <span className="text-[#D97706] text-xl sm:text-2xl">KING</span>
+          <div className="flex items-center gap-1.5 font-display font-black leading-none tracking-tight">
+            <span className="text-xl sm:text-2xl text-[#F5B800] tracking-wide">POPCORN</span>
+            <span className="text-xl sm:text-2xl text-white tracking-wide">KING</span>
           </div>
-          <span className="text-[10px] font-bold tracking-widest text-[#FF4B3E] uppercase mt-0.5">
-            Accra, Ghana
+          <span className="font-script text-xs sm:text-sm font-bold text-white tracking-normal leading-tight mt-0.5">
+            fresh Popcorn. Big Moments!!!
           </span>
         </div>
       )}

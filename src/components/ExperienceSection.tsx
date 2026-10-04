@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, MessageCircle } from 'lucide-react';
+import { Sparkles, MessageCircle, ArrowRight } from 'lucide-react';
 import { PopcornImages } from '../assets/images';
 
 export const ExperienceSection: React.FC = () => {
@@ -10,7 +10,7 @@ export const ExperienceSection: React.FC = () => {
       id: 'equipment',
       title: 'Commercial Popping Carts',
       subtitle: 'Sleek, eye-catching retro & modern equipment',
-      description: 'Our certified commercial glass popping stations and vintage mobile carts are designed to be a vibrant visual centerpiece at any wedding, birthday, or corporate gala in Accra.',
+      description: 'Our certified commercial glass popping stations and mobile carts with official black & gold graphics are designed to be a vibrant visual centerpiece at any wedding, birthday, or corporate gala in Accra.',
       image: PopcornImages.eventSetup,
       points: [
         'Heated glass display keeping popcorn steaming hot, fresh & crisp',
@@ -25,8 +25,8 @@ export const ExperienceSection: React.FC = () => {
       description: 'Nothing compares to the sensory magic of hearing corn pop and watching rich buttery caramel glaze tumble over steaming kernels right before your guests’ eyes.',
       image: PopcornImages.caramelGourmet,
       points: [
-        '100% premium non-GMO corn popped in pure coconut and sunflower oil',
-        'Handcrafted recipes: Caramel, Milky Way, Rainbow, Classic Sea Salt, Chocolate & Ginger',
+        '100% premium non-GMO corn popped in pure vegetable and coconut oils',
+        '7 signature recipes: Caramel, Milkyway Galaxy, Rainbow, Sea Salt, Chocolate, Cinnamon & Ginger',
         'Prepared live and continuously so all guests enjoy piping hot servings',
       ],
     },
@@ -39,7 +39,7 @@ export const ExperienceSection: React.FC = () => {
       points: [
         'Food-grade grease-proof tubs, cones, and aroma-sealed foil bags',
         'Custom sticker printing and personalized brand color matching',
-        'Sealed moisture barriers ensuring lasting crunch',
+        'Sealed moisture barriers ensuring lasting crunch throughout your event',
       ],
     },
     {
@@ -57,23 +57,23 @@ export const ExperienceSection: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-white relative border-t border-slate-200 text-slate-900">
-      {/* Pattern */}
-      <div className="absolute inset-0 bg-burst-pattern opacity-10 pointer-events-none" />
+    <section id="experience" className="py-24 bg-[#0D0D0D] relative border-t border-neutral-800 text-white">
+      {/* Subtle ambient lighting */}
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#F5B800]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-black uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-[#F5B800]/40 text-[#F5B800] text-xs font-black uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#F5B800]" />
             <span>The Sensory Experience</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-            The Popcorn King Experience
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight">
+            The <span className="text-[#F5B800]">Popcorn King</span> Experience
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg mt-4">
-            It is more than just a snack — it is the sound of popping kernels, the rich buttery aroma, and the unforgettable communal excitement we bring to your Accra gathering.
+          <p className="text-neutral-400 text-base sm:text-lg mt-4">
+            It is more than just a snack — it is the sound of popping kernels, the rich aroma, and the unforgettable excitement we bring to your Accra gathering.
           </p>
         </div>
 
@@ -83,13 +83,13 @@ export const ExperienceSection: React.FC = () => {
             <button
               key={step.id}
               onClick={() => setActiveTab(idx)}
-              className={`px-5 py-3 rounded-2xl font-black text-xs sm:text-sm whitespace-nowrap transition-all flex items-center gap-2 uppercase tracking-wider ${
+              className={`px-5 py-3 rounded-2xl font-black text-xs sm:text-sm whitespace-nowrap transition-all flex items-center gap-2 uppercase tracking-wider cursor-pointer ${
                 activeTab === idx
-                  ? 'bg-[#FFC800] text-[#0A192F] shadow-md shadow-amber-500/20'
-                  : 'bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200'
+                  ? 'bg-[#F5B800] text-black shadow-lg shadow-[#F5B800]/20'
+                  : 'bg-[#141414] text-neutral-300 hover:text-white border border-neutral-800'
               }`}
             >
-              <span>{idx + 1}.</span>
+              <span className={activeTab === idx ? 'text-black' : 'text-[#F5B800]'}>{idx + 1}.</span>
               <span>{step.title}</span>
             </button>
           ))}
@@ -101,12 +101,12 @@ export const ExperienceSection: React.FC = () => {
           return (
             <div
               key={step.id}
-              className="bg-slate-50 rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-xl animate-in fade-in duration-300"
+              className="bg-[#141414] rounded-3xl border border-neutral-800 p-6 sm:p-10 shadow-2xl animate-in fade-in duration-300"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
                 {/* Visual Image Side */}
-                <div className="lg:col-span-6 relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-200 border border-slate-200 shadow-sm">
+                <div className="lg:col-span-6 relative rounded-2xl overflow-hidden aspect-[4/3] bg-neutral-900 border border-neutral-800 shadow-md">
                   <img
                     src={step.image}
                     alt={step.title}
@@ -116,9 +116,9 @@ export const ExperienceSection: React.FC = () => {
                     }}
                     className="w-full h-full object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
-                  <div className="absolute bottom-4 left-4 right-4 p-3 bg-white/95 backdrop-blur-md rounded-xl border border-slate-200 text-xs text-amber-900 font-bold flex items-center gap-2 shadow-xs">
-                    <Sparkles className="w-4 h-4 text-amber-700 shrink-0" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                  <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/90 backdrop-blur-md rounded-xl border border-neutral-800 text-xs text-white font-bold flex items-center gap-2 shadow-sm">
+                    <Sparkles className="w-4 h-4 text-[#F5B800] shrink-0" />
                     <span>{step.subtitle}</span>
                   </div>
                 </div>
@@ -126,20 +126,20 @@ export const ExperienceSection: React.FC = () => {
                 {/* Details Side */}
                 <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
                   <div>
-                    <span className="text-xs font-black text-[#FF4B3E] uppercase tracking-wider block mb-1">
+                    <span className="text-xs font-black text-[#F5B800] uppercase tracking-wider block mb-1">
                       Highlight 0{idx + 1}
                     </span>
-                    <h3 className="font-display text-2xl sm:text-4xl font-black text-slate-900 mb-4">
+                    <h3 className="font-display text-2xl sm:text-4xl font-black text-white mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                    <p className="text-neutral-300 text-base sm:text-lg leading-relaxed mb-6">
                       {step.description}
                     </p>
 
                     <div className="space-y-3">
                       {step.points.map((pt, i) => (
-                        <div key={i} className="flex items-start gap-3 text-sm text-slate-700">
-                          <div className="w-5 h-5 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-black">
+                        <div key={i} className="flex items-start gap-3 text-sm text-neutral-200">
+                          <div className="w-5 h-5 rounded-full bg-[#F5B800] text-black flex items-center justify-center shrink-0 mt-0.5 text-xs font-black">
                             ✓
                           </div>
                           <span>{pt}</span>
@@ -148,20 +148,21 @@ export const ExperienceSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t border-slate-200 flex flex-wrap items-center gap-4">
+                  <div className="pt-6 border-t border-neutral-800 flex flex-wrap items-center gap-4">
                     <a
                       href="#catering"
-                      className="px-7 py-3.5 bg-[#FFC800] hover:bg-[#e6b400] text-[#0A192F] font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-md"
+                      className="px-7 py-3.5 bg-[#F5B800] hover:bg-[#FFC700] text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2"
                     >
-                      Book This Experience
+                      <span>Book This Experience</span>
+                      <ArrowRight className="w-4 h-4 stroke-[2.5]" />
                     </a>
                     <a
                       href="https://wa.me/233550999008?text=Hello%20Popcorn%20King,%20tell%20me%20more%20about%20your%20live%20cart%20experience!"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-800 border border-slate-200 rounded-xl text-xs font-bold transition-colors flex items-center gap-2 shadow-2xs"
+                      className="px-6 py-3.5 bg-neutral-900 hover:bg-neutral-800 text-white border border-neutral-800 hover:border-neutral-700 rounded-xl text-xs font-bold transition-colors flex items-center gap-2"
                     >
-                      <MessageCircle className="w-4 h-4 fill-emerald-600 text-emerald-600" />
+                      <MessageCircle className="w-4 h-4 fill-[#F5B800] text-[#F5B800]" />
                       <span>Inquire on WhatsApp</span>
                     </a>
                   </div>

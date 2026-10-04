@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, MapPin, ArrowRight, Calendar, MessageCircle, Flame, ShieldCheck, Star } from 'lucide-react';
+import { Sparkles, MapPin, ArrowRight, Calendar, MessageCircle, Star, Phone, Instagram, Facebook } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PopcornKingLogo } from './PopcornKingLogo';
 import { PopcornImages } from '../assets/images';
@@ -11,110 +11,152 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhysicalMenu }) => {
-  return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-amber-50/60 via-white to-[#FAFAFA] text-slate-900 border-b border-slate-200/70">
-      {/* Burst & Wave Geometric Pattern Overlay */}
-      <div className="absolute inset-0 bg-burst-pattern pointer-events-none" />
+  const flavours = [
+    'Sweet Caramel',
+    'Milkyway Galaxy',
+    'Classic Sea Salt',
+    'Rich Chocolate',
+    'Cinnamon Delight',
+    'Vibrant Rainbow',
+    'Fiery Ginger',
+  ];
 
-      {/* Atmospheric Warm Ambient Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-amber-200/25 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-[350px] h-[350px] bg-rose-200/25 rounded-full blur-3xl pointer-events-none" />
+  return (
+    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-[#0D0D0D] text-white border-b border-neutral-800">
+      {/* Background Chalk & Ambient Golden Glow Texture */}
+      <div className="absolute inset-0 bg-chalk-texture pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#F5B800]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#F5B800]/5 rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Hand-Drawn Doodle Stars floating in background */}
+      <div className="absolute top-36 left-8 sm:left-16 pointer-events-none opacity-40">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <path d="M22 2L26 15L39 15L29 23L33 36L22 28L11 36L15 23L5 15L18 15Z" stroke="#F5B800" strokeWidth="2" />
+        </svg>
+      </div>
+      <div className="absolute top-44 right-10 sm:right-24 pointer-events-none opacity-30">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2L19 11L28 11L21 17L24 26L16 20L8 26L11 17L4 11L13 11Z" stroke="#F5B800" strokeWidth="1.5" />
+        </svg>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* Left Column: Tagline & Desktop Content */}
+          {/* Left Column: Brand Hierarchy & Story */}
           <div className="lg:col-span-7 flex flex-col items-start text-left order-1">
             
-            {/* Location & Freshness Badge */}
+            {/* Location & Accra Hubs Tag */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/90 border border-amber-300/80 text-amber-950 text-xs sm:text-sm font-bold mb-4 sm:mb-6 shadow-xs"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-[#F5B800] text-xs sm:text-sm font-bold mb-4 shadow-xs"
             >
-              <span className="w-2 h-2 rounded-full bg-[#FF4B3E] animate-ping" />
-              <MapPin className="w-4 h-4 text-amber-700 shrink-0" />
-              <span>Accra, Ghana • Everyday Snacking to 500+ Guest Events</span>
+              <span className="w-2 h-2 rounded-full bg-[#F5B800] animate-ping" />
+              <MapPin className="w-3.5 h-3.5 text-[#F5B800] shrink-0" />
+              <span>Accra, Ghana • East Legon · Osu · Airport City · Spintex</span>
             </motion.div>
 
-            {/* Main Primary Tagline */}
+            {/* Official Cart Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.05] mb-4 sm:mb-6"
+              className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] mb-3"
             >
-              Fresh popcorn. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 drop-shadow-xs">
-                Big moments.
+              Fresh Popcorn. <br />
+              <span className="font-script text-5xl sm:text-7xl lg:text-8xl text-[#F5B800] drop-shadow-[0_2px_15px_rgba(245,184,0,0.35)] block -mt-1 sm:-mt-2">
+                Big Moments!!!
               </span>
             </motion.h1>
 
-            {/* Desktop Narrative (hidden on mobile, rendered below the image on mobile) */}
+            {/* 3 Pillars from Physical Cart Sides: Event Catering · Private Parties · Pop-Up Vending */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="flex flex-wrap items-center gap-2 sm:gap-4 my-3 text-sm sm:text-lg font-script font-bold"
+            >
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-neutral-900/90 border border-neutral-800">
+                <span className="text-[#F5B800]">Event</span>
+                <span className="text-white">Catering</span>
+              </div>
+              <span className="text-neutral-600 hidden sm:inline">•</span>
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-neutral-900/90 border border-neutral-800">
+                <span className="text-white">Private</span>
+                <span className="text-[#F5B800]">Parties</span>
+              </div>
+              <span className="text-neutral-600 hidden sm:inline">•</span>
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-neutral-900/90 border border-neutral-800">
+                <span className="text-[#F5B800]">Pop-Up</span>
+                <span className="text-white">Vending</span>
+              </div>
+            </motion.div>
+
+            {/* Narrative Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:block text-base sm:text-xl text-slate-700 max-w-2xl leading-relaxed mb-8 font-normal"
+              className="text-base sm:text-lg text-neutral-300 max-w-2xl leading-relaxed mb-6 font-normal"
             >
-              Popcorn King transforms a humble street favorite into a premium, memorable experience — whether you are craving a crunchy fresh snack bag or booking live commercial cart catering for a 500-person wedding or corporate summit in Accra.
+              Handcrafted gourmet popcorn popped 100% fresh daily with 7 signature Ghanaian flavours. Hire our commercial live glass cart stations for weddings and corporate galas, or grab retail packs delivered straight to your door across Accra.
             </motion.p>
 
-            {/* Desktop Dual CTAs (hidden on mobile, rendered below the image on mobile) */}
+            {/* Desktop Dual CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="hidden lg:flex w-full sm:w-auto flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10"
+              className="flex w-full sm:w-auto flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8"
             >
-              {/* Electric Coral Primary CTA: Book for Event */}
+              {/* Primary Popcorn Gold CTA */}
               <button
                 onClick={onBookClick}
-                className="inline-flex items-center justify-center gap-3 bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-base sm:text-lg px-8 py-4 rounded-2xl shadow-lg shadow-[#FF4B3E]/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider"
+                className="inline-flex items-center justify-center gap-3 bg-[#F5B800] hover:bg-[#FFC700] text-black font-black text-base px-8 py-4 rounded-2xl shadow-xl shadow-[#F5B800]/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider cursor-pointer"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Book Event Catering</span>
                 <ArrowRight className="w-5 h-5 stroke-[2.5]" />
               </button>
 
-              {/* Royalty Gold Secondary CTA: Order Fresh Retail */}
+              {/* Secondary CTA: Order Fresh */}
               <button
                 onClick={onOrderClick}
-                className="inline-flex items-center justify-center gap-2.5 bg-[#FFC800] hover:bg-[#e6b400] text-[#0A192F] font-black text-base sm:text-lg px-7 py-4 rounded-2xl shadow-md shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider"
+                className="inline-flex items-center justify-center gap-2.5 bg-neutral-900 hover:bg-neutral-800 border-2 border-neutral-700 hover:border-[#F5B800] text-white font-black text-base px-7 py-4 rounded-2xl shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider cursor-pointer"
               >
                 <span>Order Fresh (Retail)</span>
               </button>
+
+              {onOpenPhysicalMenu && (
+                <button
+                  onClick={onOpenPhysicalMenu}
+                  className="inline-flex items-center justify-center gap-2 text-xs font-bold text-[#F5B800] hover:underline px-4 py-3"
+                >
+                  <span>📄 View Menu Board</span>
+                </button>
+              )}
             </motion.div>
 
-            {/* Desktop Quick Flavour Strip (hidden on mobile, rendered below the image on mobile) */}
+            {/* 7 Flavours Quick Ticker */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="hidden lg:block pt-6 border-t border-slate-200 w-full"
+              className="pt-5 border-t border-neutral-800 w-full"
             >
-              <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                  <span>Official Signature Popcorn Flavours</span>
+              <div className="flex items-center justify-between flex-wrap gap-2 mb-2.5">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#F5B800] flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 fill-[#F5B800]" />
+                  <span>7 Official Signature Flavours (From GH₵ 10)</span>
                 </p>
-                <div className="flex items-center gap-3">
-                  {onOpenPhysicalMenu && (
-                    <button
-                      onClick={onOpenPhysicalMenu}
-                      className="text-xs font-bold text-slate-600 hover:text-amber-700 underline flex items-center gap-1 transition-colors"
-                    >
-                      <span>📄 Printed Menu</span>
-                    </button>
-                  )}
-                </div>
               </div>
               <div className="flex flex-wrap gap-2 text-xs">
-                {['Classic Sea Salt', 'Sweet Caramel', 'Rich Chocolate', 'Milkyway', 'Vibrant Rainbow'].map((flv) => (
+                {flavours.map((flv) => (
                   <span
                     key={flv}
-                    className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 font-semibold shadow-2xs hover:border-amber-400 hover:text-amber-700 transition-colors"
+                    className="px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-white font-semibold hover:border-[#F5B800] transition-colors"
                   >
                     🍿 {flv}
                   </span>
@@ -124,7 +166,7 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
 
           </div>
 
-          {/* Hero Visual Showcase: Positioned right after headline on mobile */}
+          {/* Right Column: Hero Visual Showcase */}
           <div className="lg:col-span-5 relative flex justify-center order-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -132,149 +174,91 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onBookClick, onOpenPhy
               transition={{ duration: 0.7, delay: 0.2 }}
               className="relative w-full max-w-md lg:max-w-none"
             >
-              {/* Decorative Frame with Gold border and subtle shadow */}
-              <div className="relative rounded-3xl overflow-hidden border-2 border-amber-300 bg-white shadow-xl aspect-[4/3] sm:aspect-square">
+              {/* Outer Golden Ambient Glow */}
+              <div className="absolute -inset-2 bg-gradient-to-tr from-[#F5B800]/30 to-amber-500/10 rounded-3xl blur-xl" />
+
+              {/* Showcase Container */}
+              <div className="relative rounded-3xl overflow-hidden border-2 border-neutral-800 hover:border-[#F5B800] bg-neutral-950 shadow-2xl aspect-[4/3] sm:aspect-square group transition-all duration-500">
                 <img
                   src={PopcornImages.cupClassicLogo}
-                  alt="Official Yellow Popcorn King Cup with Logo and Fresh Gourmet Popcorn"
+                  alt="Official POPCORN KING Ghana Signature Popcorn Cup"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                 />
                 
-                {/* Subtle bottom gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+                {/* Contrast Vignette Scrim */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20" />
 
                 {/* Top Corner Official Brand Logo Badge */}
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md p-2 rounded-2xl border border-slate-200 shadow-lg flex items-center gap-2">
+                <div className="absolute top-4 left-4 bg-neutral-950/90 backdrop-blur-md p-2 rounded-2xl border border-neutral-800 shadow-xl flex items-center gap-2">
                   <PopcornKingLogo size="sm" showText={false} />
                   <div className="pr-1">
-                    <p className="text-[10px] font-black text-amber-700 leading-none uppercase">Official</p>
-                    <p className="text-xs font-black text-slate-900 leading-none">POPCORN KING</p>
+                    <p className="text-[10px] font-black text-[#F5B800] leading-none uppercase">Official</p>
+                    <p className="text-xs font-black text-white leading-none">POPCORN KING</p>
                   </div>
                 </div>
 
-                {/* Bottom Overlay Label */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-slate-200 flex items-center justify-between shadow-xl">
+                {/* Top Right Live Popping Badge */}
+                <div className="absolute top-4 right-4 bg-[#F5B800] text-black text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
+                  <span>Live Popping</span>
+                </div>
+
+                {/* Bottom Overlay Card */}
+                <div className="absolute bottom-4 left-4 right-4 bg-neutral-950/95 backdrop-blur-md p-4 rounded-2xl border border-neutral-800 flex items-center justify-between shadow-2xl">
                   <div>
-                    <div className="flex items-center gap-1.5 text-xs text-amber-700 font-bold uppercase tracking-wider">
-                      <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
-                      <span>Accra Fresh Batch</span>
+                    <div className="flex items-center gap-1.5 text-xs text-[#F5B800] font-bold uppercase tracking-wider">
+                      <Star className="w-3.5 h-3.5 fill-[#F5B800] text-[#F5B800]" />
+                      <span>100% Fresh Daily In Accra</span>
                     </div>
-                    <p className="text-sm font-bold text-slate-900 mt-0.5">Handcrafted Gourmet Crunch</p>
+                    <p className="text-sm font-bold text-white mt-0.5">Small · Regular · Large</p>
                   </div>
-                  <span className="text-xs font-black px-3 py-1.5 rounded-xl bg-[#FF4B3E] text-white shadow-xs">
+                  <span className="text-xs font-black px-3.5 py-2 rounded-xl bg-[#F5B800] text-black shadow-md">
                     From GH₵ 10
                   </span>
                 </div>
               </div>
 
-              {/* Floating Live Popping Badge Top Right */}
-              <div className="absolute -top-3 -right-2 sm:-right-4 bg-[#FF4B3E] text-white text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full shadow-lg flex items-center gap-1.5 border border-white/30 animate-bounce">
-                <Flame className="w-4 h-4 fill-white" />
-                <span>Live Popping</span>
-              </div>
-
-              {/* Floating Event Badge Bottom Left */}
-              <div className="hidden sm:flex absolute -bottom-5 -left-4 bg-white border border-slate-200 p-3.5 rounded-2xl shadow-xl items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-700">
-                  <ShieldCheck className="w-6 h-6" />
+              {/* Floating Bottom Card: Event Station */}
+              <div className="hidden sm:flex absolute -bottom-6 -left-4 bg-neutral-900 border border-neutral-800 p-3.5 rounded-2xl shadow-2xl items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#F5B800]/15 border border-[#F5B800]/40 flex items-center justify-center text-[#F5B800]">
+                  <Sparkles className="w-5 h-5 fill-[#F5B800]" />
                 </div>
                 <div>
-                  <p className="text-xs font-extrabold text-slate-900">Full Event Catering</p>
-                  <p className="text-[11px] text-slate-600">Live Glass Carts & Uniformed Staff</p>
+                  <p className="text-xs font-black text-white">Full Event Catering Cart</p>
+                  <p className="text-[11px] text-neutral-400">Heated Glass Kettle & Uniformed Attendants</p>
                 </div>
               </div>
 
             </motion.div>
           </div>
 
-          {/* Mobile Narrative & CTAs: Positioned AFTER the image on mobile */}
-          <div className="lg:hidden col-span-1 flex flex-col items-start text-left order-3 space-y-6 pt-2">
-            
-            {/* Core Narrative on Mobile */}
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal"
+        </div>
+      </div>
+
+      {/* Cart-Matching Bottom Strip (Full-Width Gold Strip from Front & Side Cart Graphics) */}
+      <div className="mt-14 bg-[#F5B800] text-black py-2.5 px-4 shadow-xl border-y border-[#FFC700]">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm font-black">
+          <div className="flex items-center gap-3">
+            <Phone className="w-4 h-4 fill-black" />
+            <a
+              href="https://wa.me/233550999008"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base sm:text-lg font-black tracking-wide hover:underline"
             >
-              Popcorn King transforms a humble street favorite into a premium, memorable experience — whether you are craving a crunchy fresh snack bag or booking live commercial cart catering for a 500-person wedding or corporate summit in Accra.
-            </motion.p>
-
-            {/* Mobile CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="w-full flex flex-col items-stretch gap-3"
-            >
-              {/* Electric Coral Primary CTA: Book for Event */}
-              <button
-                onClick={onBookClick}
-                className="inline-flex items-center justify-center gap-3 bg-[#FF4B3E] hover:bg-[#ff3526] text-white font-black text-base px-6 py-4 rounded-2xl shadow-lg shadow-[#FF4B3E]/25 uppercase tracking-wider"
-              >
-                <Calendar className="w-5 h-5" />
-                <span>Book Event Catering</span>
-                <ArrowRight className="w-5 h-5 stroke-[2.5]" />
-              </button>
-
-              {/* Royalty Gold Secondary CTA: Order Fresh Retail */}
-              <button
-                onClick={onOrderClick}
-                className="inline-flex items-center justify-center gap-2.5 bg-[#FFC800] hover:bg-[#e6b400] text-[#0A192F] font-black text-base px-6 py-4 rounded-2xl shadow-md uppercase tracking-wider"
-              >
-                <span>Order Fresh (Retail)</span>
-              </button>
-
-              {/* Direct WhatsApp CTA for Mobile */}
-              <a
-                href="https://wa.me/233550999008?text=Hello%20Popcorn%20King,%20I%20would%20like%20to%20order%20popcorn!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base px-6 py-3.5 rounded-2xl shadow-md"
-              >
-                <MessageCircle className="w-5 h-5 fill-white" />
-                <span>WhatsApp: +233 55 099 9008</span>
-              </a>
-            </motion.div>
-
-            {/* Mobile Quick Flavour Strip */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="pt-4 border-t border-slate-200 w-full"
-            >
-              <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                  <span>Official Signature Popcorn Flavours</span>
-                </p>
-                <div className="flex items-center gap-2">
-                  {onOpenPhysicalMenu && (
-                    <button
-                      onClick={onOpenPhysicalMenu}
-                      className="text-xs font-bold text-slate-600 hover:text-amber-700 underline flex items-center gap-1 transition-colors"
-                    >
-                      <span>📄 Printed Menu</span>
-                    </button>
-                  )}
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-2 text-xs">
-                {['Classic Sea Salt', 'Sweet Caramel', 'Rich Chocolate', 'Milkyway', 'Vibrant Rainbow'].map((flv) => (
-                  <span
-                    key={flv}
-                    className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 font-semibold shadow-2xs"
-                  >
-                    🍿 {flv}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-
+              +233 550 999 008
+            </a>
           </div>
-
+          <div className="flex items-center gap-4 text-sm font-black">
+            <span className="flex items-center gap-1.5">
+              <Instagram className="w-4 h-4" />
+              <Facebook className="w-4 h-4" />
+              <span>@popcornkingghana</span>
+            </span>
+            <span className="hidden md:inline text-black/50">|</span>
+            <span className="hidden md:inline font-script text-base">Accra's #1 Gourmet Popcorn Experience</span>
+          </div>
         </div>
       </div>
     </section>

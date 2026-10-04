@@ -17,6 +17,9 @@ import vendingStand from './popcorn_vending_stand_1787441100261.jpg';
 import rainbowFlyer from './rainbow_popcorn_flyer_1787531014949.jpg';
 import seaSaltFlyer from './sea_salt_flyer_1787530969931.jpg';
 import vipTable from './vip_table_popcorn_1787527863353.jpg';
+import cinnamonFlyer from './cinnamon_delight_popcorn_1791072920884.jpg';
+import gingerFlyer from './fiery_ginger_popcorn_1791072931373.jpg';
+import bulkBoxesCrate from './bulk_party_boxes_crate_1791072944142.jpg';
 
 export const PopcornImages = {
   caramelFlyer,
@@ -35,6 +38,9 @@ export const PopcornImages = {
   rainbowFlyer,
   seaSaltFlyer,
   vipTable,
+  cinnamonFlyer,
+  gingerFlyer,
+  bulkBoxesCrate,
 };
 
 // Map file name / path strings to resolved imported module URLs
@@ -63,6 +69,9 @@ export const getImageAsset = (pathOrKey: string): string => {
   if (pathOrKey.includes('rainbow_popcorn_flyer')) return PopcornImages.rainbowFlyer;
   if (pathOrKey.includes('sea_salt_flyer')) return PopcornImages.seaSaltFlyer;
   if (pathOrKey.includes('vip_table')) return PopcornImages.vipTable;
+  if (pathOrKey.includes('cinnamon_delight') || pathOrKey.includes('cinnamonFlyer')) return PopcornImages.cinnamonFlyer;
+  if (pathOrKey.includes('fiery_ginger') || pathOrKey.includes('gingerFlyer')) return PopcornImages.gingerFlyer;
+  if (pathOrKey.includes('bulk_party_boxes') || pathOrKey.includes('bulkBoxesCrate')) return PopcornImages.bulkBoxesCrate;
 
   return pathOrKey;
 };
